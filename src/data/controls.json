@@ -1,0 +1,108 @@
+[
+  {
+    "id": "5.12",
+    "name": "Clasificación de la Información",
+    "applies": true,
+    "justification": "Aplica para clasificar contratos de clientes, bases de datos y configuraciones de red en tres niveles (Pública, Interna, Confidencial).",
+    "isoNote": "Nota ISO 27002: La información debe ser etiquetada según el nivel de impacto en la confidencialidad.",
+    "theme": "Organización",
+    "relatedRisks": [],
+    "status": "not_specified",
+    "dataNature": "documented",
+    "source": "ALE-Declaracion de Aplicabilidad SoA ISO27001 SGI-01.docx (tabla sección 2)"
+  },
+  {
+    "id": "5.30",
+    "name": "Continuidad de las TIC",
+    "applies": true,
+    "justification": "Crítico para respaldar el compromiso de disponibilidad Uptime > 99.9% en servicios de Internet empresarial.",
+    "isoNote": "Nota ISO 27002: Las capacidades TIC deben probarse periódicamente mediante escenarios BIA / RTO.",
+    "theme": "Organización",
+    "relatedRisks": [
+      "R2"
+    ],
+    "status": "not_specified",
+    "dataNature": "documented",
+    "source": "ALE-Declaracion de Aplicabilidad SoA ISO27001 SGI-01.docx (tabla sección 2)"
+  },
+  {
+    "id": "6.3",
+    "name": "Concienciación en Ciberseguridad",
+    "applies": true,
+    "justification": "Aplica a todo el personal técnico de NOC/SOC para prevenir ingeniería social y errores de configuración.",
+    "isoNote": "Nota ISO 27002: Debe incluir formación en amenazas actuales como Phishing y manejo de credenciales.",
+    "theme": "Personas",
+    "relatedRisks": [],
+    "status": "not_specified",
+    "dataNature": "documented",
+    "source": "ALE-Declaracion de Aplicabilidad SoA ISO27001 SGI-01.docx (tabla sección 2)"
+  },
+  {
+    "id": "7.12",
+    "name": "Seguridad del Cableado",
+    "applies": true,
+    "justification": "Aplica a los enlaces de fibra óptica, Data Center y cableado estructurado de los nodos de conmutación.",
+    "isoNote": "Nota ISO 27002: Las líneas de telecomunicaciones deben ir canalizadas subterráneamente o blindadas.",
+    "theme": "Físico",
+    "relatedRisks": [
+      "R2"
+    ],
+    "status": "not_specified",
+    "dataNature": "documented",
+    "source": "ALE-Declaracion de Aplicabilidad SoA ISO27001 SGI-01.docx (tabla sección 2)"
+  },
+  {
+    "id": "8.8",
+    "name": "Gestión de Vulnerabilidades",
+    "applies": true,
+    "justification": "Aplica a routers, switches y servidores cloud para ejecutar escaneos y parcheos periódicos.",
+    "isoNote": "Nota ISO 27002: Las vulnerabilidades técnicas identificadas deben ser evaluadas y corregidas según su nivel de riesgo.",
+    "theme": "Tecnología",
+    "relatedRisks": [
+      "R4"
+    ],
+    "status": "not_specified",
+    "dataNature": "documented",
+    "source": "ALE-Declaracion de Aplicabilidad SoA ISO27001 SGI-01.docx (tabla sección 2)"
+  },
+  {
+    "id": "8.12",
+    "name": "Prevención de Fuga de Datos",
+    "applies": true,
+    "justification": "Protege las bases de datos de clientes corporativos e infraestructura crítica contra filtraciones.",
+    "isoNote": "Nota ISO 27002: Implementar reglas de inspección en endpoints y puntos de salida de red.",
+    "theme": "Tecnología",
+    "relatedRisks": [],
+    "status": "not_specified",
+    "dataNature": "documented",
+    "source": "ALE-Declaracion de Aplicabilidad SoA ISO27001 SGI-01.docx (tabla sección 2)"
+  },
+  {
+    "id": "8.14",
+    "name": "Redundancia de Equipamiento TIC",
+    "applies": true,
+    "justification": "Garantiza redundancia en fuentes de poder, anillos de fibra y servidores de conmutación de Alestra.",
+    "isoNote": "Nota ISO 27002: Los sistemas redundantes deben probarse para asegurar conmutación transparente.",
+    "theme": "Tecnología",
+    "relatedRisks": [
+      "R5"
+    ],
+    "status": "not_specified",
+    "dataNature": "documented",
+    "source": "ALE-Declaracion de Aplicabilidad SoA ISO27001 SGI-01.docx (tabla sección 2)"
+  },
+  {
+    "id": "8.20",
+    "name": "Seguridad de Redes y Segregación",
+    "applies": true,
+    "justification": "Es el pilar operativo de Alestra para separar el tráfico de administración interna del tráfico de clientes.",
+    "isoNote": "Nota ISO 27002: Separar físicamente o lógicamente las redes de servicios públicos, corporativos y de desarrollo.",
+    "theme": "Tecnología",
+    "relatedRisks": [
+      "R1"
+    ],
+    "status": "not_specified",
+    "dataNature": "documented",
+    "source": "ALE-Declaracion de Aplicabilidad SoA ISO27001 SGI-01.docx (tabla sección 2)"
+  }
+]

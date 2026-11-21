@@ -1,0 +1,248 @@
+[
+  {
+    "id": "R1",
+    "title": "Ataque DDoS volumétrico que sature enlaces de Internet empresarial.",
+    "scenario": "Incremento de ciberataques volumétricos y amenazas cibernéticas externas a la red de telecomunicaciones",
+    "asset": "Ciberseguridad / Red",
+    "vulnerability": "R1: Ataque DDoS que sature la red e interrumpa o degrade el servicio",
+    "affectedAttributes": [
+      "Disponibilidad"
+    ],
+    "probability": 4,
+    "impact": 5,
+    "inherentScore": 20,
+    "level": "high",
+    "classification": "Alto",
+    "isoControls": [
+      "8.20",
+      "8.16"
+    ],
+    "existingControls": [
+      "Monitoreo de tráfico NMS 24/7",
+      "Reglas de filtrado básico en firewall de borde"
+    ],
+    "additionalControls": "Implementar sistema de mitigación anti-DDoS automatizado con depuración de tráfico en tiempo real (ISO 27001:2022 8.20 / 8.16).",
+    "treatment": "Servicio Anti-DDoS automático y monitoreo SIEM 24/7 en SOC.",
+    "treatmentPlan": "Mitigar el riesgo mediante scrubbing centers automatizados.",
+    "owner": "Director de Ciberseguridad y SOC",
+    "stakeholders": "Clientes Empresariales / IFT / SOC",
+    "needs": "Garantizar alta disponibilidad de Internet Empresarial (Uptime > 99.9%) sin interrupciones por ataques",
+    "treatmentStatus": "not_specified",
+    "residualProbability": null,
+    "residualImpact": null,
+    "residualScore": null,
+    "dataNature": "documented",
+    "source": "ALE-Matriz de Contexto Organizacional y Gestion de Riesgos SGI-01.docx (tabla sección 2) + ALE-Matriz_de_Contexto_y_Gestion_de_Riesgos_DCI_MCGR_01_Alestr.xlsx (hoja 'DCI-MCGR-01 Matriz de Riesgos')"
+  },
+  {
+    "id": "R2",
+    "title": "Corte físico accidental del enlace principal de fibra óptica.",
+    "scenario": "Vulnerabilidad física en el tendido de fibra óptica por obras civiles e infraestructura de transporte externa",
+    "asset": "Infraestructura / Fibra",
+    "vulnerability": "R2: Corte accidental del enlace principal de fibra óptica",
+    "affectedAttributes": [
+      "Disponibilidad"
+    ],
+    "probability": 3,
+    "impact": 5,
+    "inherentScore": 15,
+    "level": "high",
+    "classification": "Alto",
+    "isoControls": [
+      "5.30",
+      "7.12"
+    ],
+    "existingControls": [
+      "Monitoreo de fibra por reflectometría (OTDR)",
+      "Cuadrillas de reparación de campo"
+    ],
+    "additionalControls": "Instalar un segundo anillo de fibra óptica con trazado geográfico totalmente independiente y pruebas de conmutación automática (ISO 27001:2022 5.30 / 7.12).",
+    "treatment": "Redundancia física mediante segundo anillo con trazado independiente.",
+    "treatmentPlan": "Mitigar mediante redundancia de infraestructura física.",
+    "owner": "Gerente de Operaciones de Red (NOC)",
+    "stakeholders": "Clientes Corporativos / Gerencia de Red Axnet",
+    "needs": "Garantizar la transmisión continua de datos y redundancia física ante cortes accidentales",
+    "treatmentStatus": "not_specified",
+    "residualProbability": null,
+    "residualImpact": null,
+    "residualScore": null,
+    "dataNature": "documented",
+    "source": "ALE-Matriz de Contexto Organizacional y Gestion de Riesgos SGI-01.docx (tabla sección 2) + ALE-Matriz_de_Contexto_y_Gestion_de_Riesgos_DCI_MCGR_01_Alestr.xlsx (hoja 'DCI-MCGR-01 Matriz de Riesgos')"
+  },
+  {
+    "id": "R3",
+    "title": "Acceso no autorizado a consolas de administración NMS / Routers.",
+    "scenario": "Riesgo de suplantación de identidad o elevación de privilegios en consolas de administración centralizadas",
+    "asset": "Ciberseguridad / Acceso",
+    "vulnerability": "R3: Acceso no autorizado a las consolas de administración de red",
+    "affectedAttributes": [
+      "Confidencialidad",
+      "Integridad"
+    ],
+    "probability": 3,
+    "impact": 5,
+    "inherentScore": 15,
+    "level": "high",
+    "classification": "Alto",
+    "isoControls": [
+      "5.15",
+      "8.2"
+    ],
+    "existingControls": [
+      "Autenticación por contraseña de usuario",
+      "Política básica de contraseñas"
+    ],
+    "additionalControls": "Implementar Autenticación Multi-Factor (MFA) obligatoria, principio de menor privilegio y centralización de logs en SIEM (ISO 27001:2022 8.2 / 8.16).",
+    "treatment": "Exigir MFA, privilegio mínimo y auditoría de accesos periódica.",
+    "treatmentPlan": "Mitigar mediante autenticación robusta y trazabilidad de logs.",
+    "owner": "Gerente de Ciberseguridad e Infraestructura",
+    "stakeholders": "Consejo de Administración / Auditores de Seguridad",
+    "needs": "Asegurar el control de acceso estricto a las plataformas de gestión de red (NMS/Routers)",
+    "treatmentStatus": "not_specified",
+    "residualProbability": null,
+    "residualImpact": null,
+    "residualScore": null,
+    "dataNature": "documented",
+    "source": "ALE-Matriz de Contexto Organizacional y Gestion de Riesgos SGI-01.docx (tabla sección 2) + ALE-Matriz_de_Contexto_y_Gestion_de_Riesgos_DCI_MCGR_01_Alestr.xlsx (hoja 'DCI-MCGR-01 Matriz de Riesgos')"
+  },
+  {
+    "id": "R4",
+    "title": "Vulnerabilidades críticas por firmware desactualizado en equipos.",
+    "scenario": "Obsolescencia de firmware y parches no aplicados en dispositivos de conmutación y enrutamiento",
+    "asset": "Tecnología / Software",
+    "vulnerability": "R4: Vulnerabilidades por firmware desactualizado en equipos de red",
+    "affectedAttributes": [
+      "Integridad",
+      "Disponibilidad"
+    ],
+    "probability": 4,
+    "impact": 4,
+    "inherentScore": 16,
+    "level": "high",
+    "classification": "Alto",
+    "isoControls": [
+      "8.8",
+      "8.9"
+    ],
+    "existingControls": [
+      "Revisiones manuales periódicas de parches",
+      "Soporte técnico con fabricantes"
+    ],
+    "additionalControls": "Establecer inventario automatizado de activos y un programa institucional de gestión de parches de seguridad (ISO 27001:2022 8.8 / 8.9).",
+    "treatment": "Calendario mensual de parches y gestión de vulnerabilidades.",
+    "treatmentPlan": "Mitigar mediante gestión centralizada de actualizaciones.",
+    "owner": "Gerente de Soporte Técnico y Diagnóstico",
+    "stakeholders": "Equipo de Diagnóstico Nivel 2 / Proveedores de Hardware",
+    "needs": "Mantener la infraestructura de red libre de vulnerabilidades conocidas explotables",
+    "treatmentStatus": "not_specified",
+    "residualProbability": null,
+    "residualImpact": null,
+    "residualScore": null,
+    "dataNature": "documented",
+    "source": "ALE-Matriz de Contexto Organizacional y Gestion de Riesgos SGI-01.docx (tabla sección 2) + ALE-Matriz_de_Contexto_y_Gestion_de_Riesgos_DCI_MCGR_01_Alestr.xlsx (hoja 'DCI-MCGR-01 Matriz de Riesgos')"
+  },
+  {
+    "id": "R5",
+    "title": "Falla de suministro eléctrico y no activación de plantas de respaldo.",
+    "scenario": "Interrupciones en el suministro eléctrico comercial externo que pongan en riesgo la operación continua",
+    "asset": "Físico / Data Center",
+    "vulnerability": "R5: Falla de energía y falta de activación de los sistemas de respaldo",
+    "affectedAttributes": [
+      "Disponibilidad"
+    ],
+    "probability": 2,
+    "impact": 5,
+    "inherentScore": 10,
+    "level": "high",
+    "classification": "Alto",
+    "isoControls": [
+      "7.11",
+      "8.14"
+    ],
+    "existingControls": [
+      "Mantenimiento anual de plantas de emergencia",
+      "Bancos de baterías UPS"
+    ],
+    "additionalControls": "Realizar pruebas mensuales con carga de plantas diésel de emergencia y mantenimiento preventivo de UPS N+1 (ISO 27001:2022 7.11 / 8.14).",
+    "treatment": "Mantenimiento preventivo y pruebas mensuales con carga real.",
+    "treatmentPlan": "Mitigar mediante pruebas periódicas y redundancia de energía.",
+    "owner": "Gerente de Data Center e Infraestructura Física",
+    "stakeholders": "Clientes de Servicios Nube / Gerencia Data Center",
+    "needs": "Continuidad operativa ininterrumpida en centros de datos 24/7/365",
+    "treatmentStatus": "not_specified",
+    "residualProbability": null,
+    "residualImpact": null,
+    "residualScore": null,
+    "dataNature": "documented",
+    "source": "ALE-Matriz de Contexto Organizacional y Gestion de Riesgos SGI-01.docx (tabla sección 2) + ALE-Matriz_de_Contexto_y_Gestion_de_Riesgos_DCI_MCGR_01_Alestr.xlsx (hoja 'DCI-MCGR-01 Matriz de Riesgos')"
+  },
+  {
+    "id": "R6",
+    "title": "Error humano en cambio de configuración de red durante ventana.",
+    "scenario": "Complejidad técnica en cambios de topología y configuraciones de enrutamiento en ventanas de mantenimiento",
+    "asset": "Operativo / Personas",
+    "vulnerability": "R6: Error humano durante un cambio de configuración de red",
+    "affectedAttributes": [
+      "Integridad",
+      "Disponibilidad"
+    ],
+    "probability": 3,
+    "impact": 4,
+    "inherentScore": 12,
+    "level": "high",
+    "classification": "Alto",
+    "isoControls": [
+      "8.9",
+      "8.32"
+    ],
+    "existingControls": [
+      "Solicitud de cambio registrada en sistema de tickets"
+    ],
+    "additionalControls": "Exigir evaluación previa en Comité de Cambios (CAB), revisión técnica por pares y plan obligatorio de reversión (Rollback) (ISO 27001:2022 8.32 / ITIL).",
+    "treatment": "Procedimiento de control de cambios, revisión cruzada y rollback.",
+    "treatmentPlan": "Mitigar mediante procedimiento de control de cambios estandarizado.",
+    "owner": "Jefe de Proyecto y Gestión de Cambios",
+    "stakeholders": "Clientes Empresariales / Personal Técnico NOC",
+    "needs": "Ejecución de cambios de infraestructura sin afectar los Acuerdos de Nivel de Servicio (SLA)",
+    "treatmentStatus": "not_specified",
+    "residualProbability": null,
+    "residualImpact": null,
+    "residualScore": null,
+    "dataNature": "documented",
+    "source": "ALE-Matriz de Contexto Organizacional y Gestion de Riesgos SGI-01.docx (tabla sección 2) + ALE-Matriz_de_Contexto_y_Gestion_de_Riesgos_DCI_MCGR_01_Alestr.xlsx (hoja 'DCI-MCGR-01 Matriz de Riesgos')"
+  },
+  {
+    "id": "R7",
+    "title": "Demora en detección o escalamiento de alerta de caída de servicio.",
+    "scenario": "Cuellos de botella en la comunicación interna entre Nivel 1 y Nivel 3 durante eventos masivos de falla",
+    "asset": "Operativo / NOC",
+    "vulnerability": "R7: Demora en detectar o escalar una alerta de servicio",
+    "affectedAttributes": [
+      "Disponibilidad"
+    ],
+    "probability": 3,
+    "impact": 4,
+    "inherentScore": 12,
+    "level": "high",
+    "classification": "Alto",
+    "isoControls": [
+      "5.24",
+      "5.25"
+    ],
+    "existingControls": [
+      "Alertas visuales de servicio en consolas NMS"
+    ],
+    "additionalControls": "Definir matriz formal de escalamiento automatizado por tiempos, alarmas sonoras e indicadores KPI de MTTR (ISO 20000 / ITIL Incident Management).",
+    "treatment": "Reglas de escalamiento automatizado en NMS e indicadores MTTR.",
+    "treatmentPlan": "Mitigar automatizando flujos de trabajo y tiempos de escalamiento.",
+    "owner": "Gerente de Mesa de Servicio y Atención a Clientes",
+    "stakeholders": "Clientes Empresariales / Mesa de Servicio (NOC)",
+    "needs": "Cumplimiento de tiempos máximos de respuesta y resolución técnica (MTTR < 2 horas)",
+    "treatmentStatus": "not_specified",
+    "residualProbability": null,
+    "residualImpact": null,
+    "residualScore": null,
+    "dataNature": "documented",
+    "source": "ALE-Matriz de Contexto Organizacional y Gestion de Riesgos SGI-01.docx (tabla sección 2) + ALE-Matriz_de_Contexto_y_Gestion_de_Riesgos_DCI_MCGR_01_Alestr.xlsx (hoja 'DCI-MCGR-01 Matriz de Riesgos')"
+  }
+]

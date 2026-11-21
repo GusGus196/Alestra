@@ -1,0 +1,18 @@
+[
+  {
+    "id": "F-01-INC-2026-089",
+    "date": "2026-10-23T08:15:00",
+    "process": "ALE-CP-01 — Servicio de Internet Empresarial, Data Center Querétaro",
+    "description": "Ataque volumétrico cibernético Anti-DDoS de 45 Gbps dirigido a la infraestructura IP de clientes corporativos.",
+    "severity": "Crítica",
+    "riskId": "R1",
+    "status": "Mitigado; tráfico normalizado y servicio restablecido",
+    "mttrMinutes": 45,
+    "action": "Activación automática del servicio scrubbing anti-DDoS en el SOC y conmutación a ruta de mitigación.",
+    "outcome": "Ataque mitigado al 100%, tráfico normalizado, servicio restablecido con Uptime mantenido en 99.95%.",
+    "reportedUptime": "99.95%",
+    "dataNature": "simulated",
+    "simulationNotice": "SIMULACIÓN ACADÉMICA — NO ES UN INCIDENTE REAL",
+    "source": "ALE-Manual SGI Alestra-01.docx, registro F-01 (sección 3)"
+  }
+]

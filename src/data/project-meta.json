@@ -1,0 +1,384 @@
+{
+  "project": {
+    "name": "SGI-Dash",
+    "fullName": "Dashboard académico de Gestión Integral de Alestra",
+    "organization": "Alestra (Unidad de Servicios de Axtel)",
+    "version": "01",
+    "datasetUpdatedAt": "2026-11-21",
+    "academicNotice": "Propuesta académica; datos de ejemplo y simulación cuando así se indique.",
+    "scope": "La propuesta se centra en ALE-CP-01: Gestión y Soporte de Servicios de Internet Empresarial. Nube, Data Center, SOC y NOC se muestran como áreas o interfaces relacionadas.",
+    "process": {
+      "id": "ALE-CP-01",
+      "name": "Gestión y Soporte de Servicios de Internet Empresarial",
+      "type": "Proceso misional / operativo",
+      "objective": "Gestionar solicitudes e incidentes del servicio de Internet Empresarial de manera controlada, oportuna y trazable, procurando la continuidad, disponibilidad y seguridad de la información asociada.",
+      "start": "Recepción de un reporte, solicitud o alerta de monitoreo.",
+      "end": "Atención, verificación, comunicación al cliente y cierre documentado.",
+      "inputs": [
+        "Reportes de falla de clientes empresariales",
+        "Alertas de sistemas de monitoreo (NMS)",
+        "Solicitudes de servicio",
+        "Datos del contrato y SLA",
+        "Información técnica autorizada"
+      ],
+      "outputs": [
+        "Ticket actualizado",
+        "Diagnóstico y bitácora técnica",
+        "Acciones de atención y escalamiento",
+        "Servicio verificado o seguimiento pendiente",
+        "Comunicación de cierre y registros de evidencia"
+      ],
+      "relatedAreas": [
+        "Mesa de servicio",
+        "NOC",
+        "SOC cuando aplique",
+        "Monitoreo de redes",
+        "Aprovisionamiento",
+        "Atención al cliente",
+        "Facturación"
+      ]
+    }
+  },
+  "dataPolicy": [
+    "DOCUMENTADO: aparece en un documento del expediente académico.",
+    "PROPUESTO: meta, procedimiento, control o diseño propuesto; no es un resultado medido.",
+    "SIMULADO: escenario académico simulado.",
+    "DEMO: valor sintético agregado solo para mostrar una gráfica.",
+    "MEDIDO: valor respaldado por registros reales verificables. No se usa en esta versión."
+  ],
+  "riskScale": {
+    "probability": "1 a 5",
+    "impact": "1 a 5",
+    "levels": [
+      {
+        "range": "1–4",
+        "label": "Aceptable",
+        "key": "acceptable"
+      },
+      {
+        "range": "5–9",
+        "label": "Tolerable",
+        "key": "tolerable"
+      },
+      {
+        "range": "10–25",
+        "label": "Alto / Crítico",
+        "key": "high"
+      }
+    ]
+  },
+  "sourcePriority": [
+    {
+      "topic": "Objetivo y alcance del proceso",
+      "source": "ALE-Introducción-01.docx y ALE-SGI-CP-01_Cedula_Proceso_Internet_Empresarial.docx"
+    },
+    {
+      "topic": "Objetivos e indicadores",
+      "source": "ALE-SGI-OBJ-01_Matriz_Objetivos_e_Indicadores.xlsx (hoja 'Objetivos_SGI')"
+    },
+    {
+      "topic": "Riesgos",
+      "source": "ALE-Matriz de Contexto Organizacional y Gestion de Riesgos SGI-01.docx (tabla sección 2) + ALE-Matriz_de_Contexto_y_Gestion_de_Riesgos_DCI_MCGR_01_Alestr.xlsx (hoja 'DCI-MCGR-01 Matriz de Riesgos')"
+    },
+    {
+      "topic": "Activos",
+      "source": "ALE-SGI-ACT-01_Inventario_Activos_Alestra_v02.xlsx (hoja 'Inventario_Activos')"
+    },
+    {
+      "topic": "Controles y justificaciones",
+      "source": "ALE-Declaracion de Aplicabilidad SoA ISO27001 SGI-01.docx (tabla sección 2)"
+    },
+    {
+      "topic": "Políticas y registro DDoS simulado",
+      "source": "ALE-Manual SGI Alestra-01.docx"
+    },
+    {
+      "topic": "Flujo de atención de incidentes",
+      "source": "ALE-PR-01_Procedimiento_Atencion_Internet_Empresarial.docx"
+    },
+    {
+      "topic": "PHVA, gobernanza y mapa de procesos",
+      "source": "ALE-Plan de Proyecto SGI-01.docx"
+    }
+  ],
+  "documents": [
+    {
+      "code": "ALE-INTRO-01",
+      "name": "Introducción al proceso",
+      "file": "ALE-Introducción-01.docx",
+      "version": "01",
+      "status": "Documento académico",
+      "use": "Contexto y descripción del proceso ALE-CP-01."
+    },
+    {
+      "code": "ALE-SGI-ACT-01",
+      "name": "Inventario y clasificación de activos",
+      "file": "ALE-SGI-ACT-01_Inventario_Activos_Alestra_v02.xlsx",
+      "version": "02.00",
+      "status": "Documento académico",
+      "use": "Inventario detallado y clasificación de activos."
+    },
+    {
+      "code": "ALE-PLAN-01",
+      "name": "Plan de proyecto SGI",
+      "file": "ALE-Plan de Proyecto SGI-01.docx",
+      "version": "01",
+      "status": "Entregable académico",
+      "use": "Gobernanza, mapa de procesos, PHVA y plan del proyecto."
+    },
+    {
+      "code": "ALE-MANUAL-01",
+      "name": "Manual maestro del SGI y políticas",
+      "file": "ALE-Manual SGI Alestra-01.docx",
+      "version": "01",
+      "status": "Documento académico",
+      "use": "Políticas, producto final y registro de incidente simulado."
+    },
+    {
+      "code": "ALE-MCGR-01",
+      "name": "Matriz de contexto y gestión de riesgos",
+      "file": "ALE-Matriz de Contexto Organizacional y Gestion de Riesgos SGI-01.docx",
+      "version": "01",
+      "status": "Documento académico",
+      "use": "Contexto, partes interesadas y riesgos R1–R7."
+    },
+    {
+      "code": "DCI-MCGR-01",
+      "name": "Matriz institucional de evaluación de riesgos",
+      "file": "ALE-Matriz_de_Contexto_y_Gestion_de_Riesgos_DCI_MCGR_01_Alestr.xlsx",
+      "version": "04",
+      "status": "Formato institucional / academicado",
+      "use": "Riesgos, escenarios, propietarios y planes de tratamiento."
+    },
+    {
+      "code": "ALE-ISO-01",
+      "name": "Referencia ISO/IEC 27001:2022",
+      "file": "ALE-ISO 27001-01.docx",
+      "version": "01",
+      "status": "Documento de referencia",
+      "use": "Marco normativo de seguridad de la información."
+    },
+    {
+      "code": "ALE-SOA-01",
+      "name": "Declaración de Aplicabilidad (SoA)",
+      "file": "ALE-Declaracion de Aplicabilidad SoA ISO27001 SGI-01.docx",
+      "version": "01",
+      "status": "Documento académico",
+      "use": "Controles seleccionados y justificaciones."
+    },
+    {
+      "code": "ALE-SGI-OBJ-01",
+      "name": "Matriz de objetivos e indicadores",
+      "file": "ALE-SGI-OBJ-01_Matriz_Objetivos_e_Indicadores.xlsx",
+      "version": "01",
+      "status": "Propuesta académica",
+      "use": "Objetivos, fórmulas, metas propuestas y seguimiento."
+    },
+    {
+      "code": "ALE-SGI-CP-01",
+      "name": "Cédula del proceso",
+      "file": "ALE-SGI-CP-01_Cedula_Proceso_Internet_Empresarial.docx",
+      "version": "01",
+      "status": "Propuesta académica pendiente de validación",
+      "use": "Ficha del proceso, entradas, salidas, roles y PHVA."
+    },
+    {
+      "code": "ALE-PR-01",
+      "name": "Procedimiento de atención",
+      "file": "ALE-PR-01_Procedimiento_Atencion_Internet_Empresarial.docx",
+      "version": "01",
+      "status": "Propuesta académica pendiente de validación",
+      "use": "Procedimiento propuesto para solicitudes e incidentes."
+    }
+  ],
+  "stakeholders": [
+    {
+      "name": "Clientes empresariales",
+      "need": "Disponibilidad del servicio y cumplimiento de SLA."
+    },
+    {
+      "name": "IFT / autoridades regulatorias",
+      "need": "Cumplimiento normativo y protección de datos."
+    },
+    {
+      "name": "Consejo de Administración / Axtel",
+      "need": "Rentabilidad, reputación y mitigación de riesgos."
+    },
+    {
+      "name": "Personal NOC / SOC / TI",
+      "need": "Procedimientos claros, herramientas estandarizadas y seguridad."
+    },
+    {
+      "name": "Proveedores de infraestructura",
+      "need": "Acuerdos operativos e interfaces seguras."
+    }
+  ],
+  "foda": [
+    {
+      "category": "Fortalezas",
+      "type": "Interno",
+      "items": [
+        "Red de fibra óptica y redundancia (Axnet).",
+        "Centros de datos y personal técnico NOC/SOC especializado."
+      ]
+    },
+    {
+      "category": "Oportunidades",
+      "type": "Externo",
+      "items": [
+        "Demanda de nube híbrida y ciberseguridad gestionada.",
+        "Automatización e IA en monitoreo.",
+        "Expansión de servicios empresariales."
+      ]
+    },
+    {
+      "category": "Debilidades",
+      "type": "Interno",
+      "items": [
+        "Complejidad de integración de plataformas heredadas y ticketing.",
+        "Ventanas de mantenimiento.",
+        "Necesidad de capacitación continua."
+      ]
+    },
+    {
+      "category": "Amenazas",
+      "type": "Externo",
+      "items": [
+        "Ataques DDoS y malware.",
+        "Cortes de fibra por terceros.",
+        "Regulación y penalizaciones asociadas a SLA."
+      ]
+    }
+  ],
+  "policies": [
+    {
+      "name": "Segregación de redes e infraestructura Cloud",
+      "controls": [
+        "8.20"
+      ],
+      "objective": "Garantizar el aislamiento entre tráfico de administración, redes privadas de clientes y entornos de desarrollo/producción.",
+      "lines": [
+        "VLAN y VRF dedicadas para cada cliente corporativo.",
+        "Consolas NMS sin conexión directa a red pública sin VPN cifrada IPsec.",
+        "Firewalls perimetrales e inspección entre zonas DMZ, interna y clientes."
+      ]
+    },
+    {
+      "name": "Monitoreo, logs y eventos SIEM",
+      "controls": [
+        "8.16",
+        "8.15",
+        "8.17"
+      ],
+      "objective": "Asegurar generación, centralización, protección y análisis de registros de eventos.",
+      "lines": [
+        "Dispositivos de red envían logs Syslog al SIEM del SOC.",
+        "Registros de auditoría protegidos contra escritura durante mínimo 12 meses.",
+        "Sincronización horaria mediante NTP corporativo redundante."
+      ]
+    },
+    {
+      "name": "Gestión de activos y clasificación de información",
+      "controls": [
+        "5.12"
+      ],
+      "objective": "Clasificar los activos de información en Pública, Interna y Confidencial.",
+      "lines": [
+        "Clasificación de activos en tres niveles con requisitos de etiquetado y cifrado."
+      ]
+    }
+  ],
+  "phva": [
+    {
+      "phase": "Planificar",
+      "label": "Plan",
+      "description": "Contexto, alcance, activos, riesgos, objetivos y controles.",
+      "modules": [
+        "Resumen",
+        "Riesgos",
+        "Activos",
+        "Indicadores",
+        "Controles"
+      ]
+    },
+    {
+      "phase": "Hacer",
+      "label": "Do",
+      "description": "Procedimientos, tratamientos y seguimiento de actividades.",
+      "modules": [
+        "Incidentes",
+        "Documentación"
+      ]
+    },
+    {
+      "phase": "Verificar",
+      "label": "Check",
+      "description": "Indicadores, seguimiento de controles, incidentes y evidencias.",
+      "modules": [
+        "Indicadores",
+        "Controles",
+        "Incidentes"
+      ]
+    },
+    {
+      "phase": "Actuar",
+      "label": "Act",
+      "description": "Acciones pendientes, responsables propuestos y seguimiento.",
+      "modules": [
+        "Riesgos",
+        "Documentación"
+      ]
+    }
+  ],
+  "procedure": {
+    "steps": [
+      "Recepción",
+      "Registro",
+      "Validación y clasificación",
+      "Diagnóstico inicial",
+      "Resolución o escalamiento",
+      "Atención autorizada",
+      "Verificación",
+      "Comunicación y cierre",
+      "Conservación y análisis"
+    ],
+    "roles": [
+      {
+        "role": "Mesa de servicio / recepción",
+        "responsibility": "Registrar el caso, validar datos, categorizar y mantener informado al solicitante."
+      },
+      {
+        "role": "NOC / personal técnico autorizado",
+        "responsibility": "Analizar, realizar pruebas y acciones autorizadas, documentar y escalar."
+      },
+      {
+        "role": "Responsable del proceso",
+        "responsibility": "Supervisar el flujo, resolver bloqueos y revisar indicadores."
+      },
+      {
+        "role": "SOC / Seguridad, cuando aplique",
+        "responsibility": "Apoyar ante indicios de amenazas, accesos indebidos o eventos de seguridad."
+      }
+    ],
+    "source": "ALE-PR-01_Procedimiento_Atencion_Internet_Empresarial.docx (propuesta académica pendiente de validación)"
+  },
+  "integrations": [
+    "NMS (Zabbix / PRTG): fuente contemplada para alertas y disponibilidad.",
+    "Jira Service Management: fuente contemplada para tickets y tiempos.",
+    "SIEM / SOC: fuente contemplada para eventos de seguridad.",
+    "Automatización e IA: parte de la propuesta conceptual.",
+    "No hay conexiones API operativas ni credenciales en esta entrega; la capa de datos es local (JSON)."
+  ],
+  "pendingItems": [
+    "Riesgo residual: existen columnas de P e I residual, pero los resultados no están completados ni validados; se muestra pendiente.",
+    "Uptime >99.9% y MTTR <2h son metas propuestas, no resultados medidos.",
+    "SLA depende del contrato aplicable; no se asigna un porcentaje universal.",
+    "CSAT requiere definir escala, pregunta, muestra y meta antes de calcularlo.",
+    "El registro F-01-INC-2026-089 es una simulación académica; se etiqueta en todas las vistas.",
+    "La SoA presenta controles aplicables y justificaciones; no se asume que están implementados.",
+    "ALE-PR-01 y la cédula del proceso son propuestas pendientes de validación.",
+    "Existen variaciones de redacción y valoración entre matrices; se conserva la procedencia de cada dato.",
+    "La hoja 'Matriz_Riesgos_ALE-CP-01' citada en el README no está presente en docs/: se usan la matriz DOCX del SGI (P, I y tratamientos) y la hoja 'DCI-MCGR-01 Matriz de Riesgos' del XLSX disponible (escenarios, propietarios y controles)."
+  ],
+  "dataNote": "El dashboard es una herramienta de consulta y seguimiento. No sustituye al SGI, al NOC, al SOC, al SIEM ni a los sistemas de tickets de Alestra."
+}

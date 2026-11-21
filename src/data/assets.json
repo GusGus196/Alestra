@@ -1,0 +1,420 @@
+[
+  {
+    "id": "ACT-INF-01",
+    "category": "Información",
+    "name": "BD de Clientes Empresariales y Contratos (SLA)",
+    "environment": "Data Center Querétaro / Cloud",
+    "owner": "Gerencia de Atención a Clientes",
+    "classification": "Confidencial / Crítica",
+    "classificationGroup": "Confidencial",
+    "confidentiality": 4,
+    "integrity": 4,
+    "availability": 4,
+    "controls": [
+      "5.12",
+      "8.11",
+      "8.12"
+    ],
+    "dataNature": "documented",
+    "source": "ALE-SGI-ACT-01_Inventario_Activos_Alestra_v02.xlsx (hoja 'Inventario_Activos')"
+  },
+  {
+    "id": "ACT-INF-02",
+    "category": "Información",
+    "name": "Registros de Clientes, Facturación y Cuentas",
+    "environment": "Servidores ERP / Billing",
+    "owner": "Gerencia de Facturación",
+    "classification": "Confidencial / Crítica",
+    "classificationGroup": "Confidencial",
+    "confidentiality": 3,
+    "integrity": 4,
+    "availability": 3,
+    "controls": [
+      "5.12",
+      "8.12"
+    ],
+    "dataNature": "documented",
+    "source": "ALE-SGI-ACT-01_Inventario_Activos_Alestra_v02.xlsx (hoja 'Inventario_Activos')"
+  },
+  {
+    "id": "ACT-INF-03",
+    "category": "Información",
+    "name": "Datos de Operaciones, Tickets y Alertas NMS",
+    "environment": "Plataforma Jira / NMS",
+    "owner": "Soporte Técnico / NOC",
+    "classification": "Confidencial / Crítica",
+    "classificationGroup": "Confidencial",
+    "confidentiality": 2,
+    "integrity": 3,
+    "availability": 4,
+    "controls": [
+      "8.15",
+      "8.16"
+    ],
+    "dataNature": "documented",
+    "source": "ALE-SGI-ACT-01_Inventario_Activos_Alestra_v02.xlsx (hoja 'Inventario_Activos')"
+  },
+  {
+    "id": "ACT-INF-04",
+    "category": "Información",
+    "name": "Bases de Conocimiento Técnico y Documentos SGI",
+    "environment": "Repositorio Cloud SGI-Dash",
+    "owner": "Consultor de Procesos SGI",
+    "classification": "Restringida / Alta",
+    "classificationGroup": "Interna",
+    "confidentiality": 2,
+    "integrity": 3,
+    "availability": 3,
+    "controls": [
+      "5.12",
+      "7.5.3"
+    ],
+    "dataNature": "documented",
+    "source": "ALE-SGI-ACT-01_Inventario_Activos_Alestra_v02.xlsx (hoja 'Inventario_Activos')"
+  },
+  {
+    "id": "ACT-SOF-01",
+    "category": "Software",
+    "name": "Sistema de Gestión de Tickets (Jira Service Mgmt)",
+    "environment": "Servidores Cloud Alestra",
+    "owner": "Mesa de Servicio / NOC",
+    "classification": "Confidencial / Crítica",
+    "classificationGroup": "Confidencial",
+    "confidentiality": 2,
+    "integrity": 4,
+    "availability": 4,
+    "controls": [
+      "8.8",
+      "8.9",
+      "8.19"
+    ],
+    "dataNature": "documented",
+    "source": "ALE-SGI-ACT-01_Inventario_Activos_Alestra_v02.xlsx (hoja 'Inventario_Activos')"
+  },
+  {
+    "id": "ACT-SOF-02",
+    "category": "Software",
+    "name": "Consolas de Monitoreo de Red NMS (Zabbix/PRTG)",
+    "environment": "Servidores NOC Central",
+    "owner": "Gerencia de Operaciones NOC",
+    "classification": "Confidencial / Crítica",
+    "classificationGroup": "Confidencial",
+    "confidentiality": 2,
+    "integrity": 4,
+    "availability": 4,
+    "controls": [
+      "8.15",
+      "8.16",
+      "8.20"
+    ],
+    "dataNature": "documented",
+    "source": "ALE-SGI-ACT-01_Inventario_Activos_Alestra_v02.xlsx (hoja 'Inventario_Activos')"
+  },
+  {
+    "id": "ACT-SOF-03",
+    "category": "Software",
+    "name": "Plataforma SIEM y Herramientas del SOC",
+    "environment": "Centro de Ciberseguridad SOC",
+    "owner": "Director de Ciberseguridad SOC",
+    "classification": "Confidencial / Crítica",
+    "classificationGroup": "Confidencial",
+    "confidentiality": 3,
+    "integrity": 4,
+    "availability": 4,
+    "controls": [
+      "8.16",
+      "8.20"
+    ],
+    "dataNature": "documented",
+    "source": "ALE-SGI-ACT-01_Inventario_Activos_Alestra_v02.xlsx (hoja 'Inventario_Activos')"
+  },
+  {
+    "id": "ACT-SOF-04",
+    "category": "Software",
+    "name": "Portal Web de Clientes y Dashboard SGI-Dash",
+    "environment": "Entorno Web / Streamlit",
+    "owner": "Consultor Técnico SGI",
+    "classification": "Restringida / Alta",
+    "classificationGroup": "Interna",
+    "confidentiality": 2,
+    "integrity": 3,
+    "availability": 3,
+    "controls": [
+      "8.8",
+      "8.19"
+    ],
+    "dataNature": "documented",
+    "source": "ALE-SGI-ACT-01_Inventario_Activos_Alestra_v02.xlsx (hoja 'Inventario_Activos')"
+  },
+  {
+    "id": "ACT-HAR-01",
+    "category": "Hardware",
+    "name": "Servidores Data Center y Nodos de Conmutación",
+    "environment": "Data Center Querétaro",
+    "owner": "Gerencia de Infraestructura TI",
+    "classification": "Confidencial / Crítica",
+    "classificationGroup": "Confidencial",
+    "confidentiality": 3,
+    "integrity": 4,
+    "availability": 4,
+    "controls": [
+      "7.5",
+      "7.11",
+      "8.14"
+    ],
+    "dataNature": "documented",
+    "source": "ALE-SGI-ACT-01_Inventario_Activos_Alestra_v02.xlsx (hoja 'Inventario_Activos')"
+  },
+  {
+    "id": "ACT-HAR-02",
+    "category": "Hardware",
+    "name": "Servidores de Respaldo y Almacenamiento SAN",
+    "environment": "Data Center Secundario",
+    "owner": "Gerencia de Infraestructura TI",
+    "classification": "Confidencial / Crítica",
+    "classificationGroup": "Confidencial",
+    "confidentiality": 3,
+    "integrity": 4,
+    "availability": 4,
+    "controls": [
+      "8.13",
+      "8.14"
+    ],
+    "dataNature": "documented",
+    "source": "ALE-SGI-ACT-01_Inventario_Activos_Alestra_v02.xlsx (hoja 'Inventario_Activos')"
+  },
+  {
+    "id": "ACT-HAR-03",
+    "category": "Hardware",
+    "name": "Laptops y Dispositivos de Trabajo NOC/SOC",
+    "environment": "Instalaciones Alestra / Teletrabajo",
+    "owner": "Administración de Activos TI",
+    "classification": "Restringida / Alta",
+    "classificationGroup": "Interna",
+    "confidentiality": 3,
+    "integrity": 3,
+    "availability": 3,
+    "controls": [
+      "8.1",
+      "8.7"
+    ],
+    "dataNature": "documented",
+    "source": "ALE-SGI-ACT-01_Inventario_Activos_Alestra_v02.xlsx (hoja 'Inventario_Activos')"
+  },
+  {
+    "id": "ACT-SER-01",
+    "category": "Servicios",
+    "name": "Servicio de Internet Empresarial (ALE-CP-01)",
+    "environment": "Red Nacional Alestra/Axnet",
+    "owner": "Gerencia de Operaciones de Red",
+    "classification": "Confidencial / Crítica",
+    "classificationGroup": "Confidencial",
+    "confidentiality": 2,
+    "integrity": 4,
+    "availability": 4,
+    "controls": [
+      "5.30",
+      "8.20"
+    ],
+    "dataNature": "documented",
+    "source": "ALE-SGI-ACT-01_Inventario_Activos_Alestra_v02.xlsx (hoja 'Inventario_Activos')"
+  },
+  {
+    "id": "ACT-SER-02",
+    "category": "Servicios",
+    "name": "Servicios en la Nube e Infraestructura Cloud",
+    "environment": "Data Centers Alestra",
+    "owner": "Gerencia de Nube",
+    "classification": "Confidencial / Crítica",
+    "classificationGroup": "Confidencial",
+    "confidentiality": 3,
+    "integrity": 4,
+    "availability": 4,
+    "controls": [
+      "5.23",
+      "8.14"
+    ],
+    "dataNature": "documented",
+    "source": "ALE-SGI-ACT-01_Inventario_Activos_Alestra_v02.xlsx (hoja 'Inventario_Activos')"
+  },
+  {
+    "id": "ACT-SER-03",
+    "category": "Servicios",
+    "name": "Servicios de Ciberseguridad Gestionada SOC 24/7",
+    "environment": "SOC Alestra",
+    "owner": "Dirección de Ciberseguridad",
+    "classification": "Confidencial / Crítica",
+    "classificationGroup": "Confidencial",
+    "confidentiality": 3,
+    "integrity": 4,
+    "availability": 4,
+    "controls": [
+      "8.16",
+      "8.20"
+    ],
+    "dataNature": "documented",
+    "source": "ALE-SGI-ACT-01_Inventario_Activos_Alestra_v02.xlsx (hoja 'Inventario_Activos')"
+  },
+  {
+    "id": "ACT-INT-01",
+    "category": "Intangibles",
+    "name": "Marca e Imagen Corporativa Alestra",
+    "environment": "Entorno Comercial Global",
+    "owner": "Dirección General",
+    "classification": "Restringida / Alta",
+    "classificationGroup": "Interna",
+    "confidentiality": 1,
+    "integrity": 3,
+    "availability": 3,
+    "controls": [
+      "5.1",
+      "5.12"
+    ],
+    "dataNature": "documented",
+    "source": "ALE-SGI-ACT-01_Inventario_Activos_Alestra_v02.xlsx (hoja 'Inventario_Activos')"
+  },
+  {
+    "id": "ACT-INT-02",
+    "category": "Intangibles",
+    "name": "Reputación Comercial y Confianza del Mercado",
+    "environment": "Ecosistema Axtel / Mercado",
+    "owner": "Consejo de Administración",
+    "classification": "Confidencial / Crítica",
+    "classificationGroup": "Confidencial",
+    "confidentiality": 1,
+    "integrity": 4,
+    "availability": 4,
+    "controls": [
+      "5.1",
+      "5.30"
+    ],
+    "dataNature": "documented",
+    "source": "ALE-SGI-ACT-01_Inventario_Activos_Alestra_v02.xlsx (hoja 'Inventario_Activos')"
+  },
+  {
+    "id": "ACT-RED-01",
+    "category": "Componentes de Red",
+    "name": "Anillos de Fibra Óptica de Transporte Axnet",
+    "environment": "Trazado Nacional Subterráneo",
+    "owner": "Gerencia de Operaciones de Red",
+    "classification": "Confidencial / Crítica",
+    "classificationGroup": "Confidencial",
+    "confidentiality": 1,
+    "integrity": 4,
+    "availability": 4,
+    "controls": [
+      "5.30",
+      "7.12",
+      "8.20"
+    ],
+    "dataNature": "documented",
+    "source": "ALE-SGI-ACT-01_Inventario_Activos_Alestra_v02.xlsx (hoja 'Inventario_Activos')"
+  },
+  {
+    "id": "ACT-RED-02",
+    "category": "Componentes de Red",
+    "name": "Routers de Borde y Switches de Conmutación",
+    "environment": "Nodos de Red Nacionales",
+    "owner": "Gerencia de Operaciones NOC",
+    "classification": "Confidencial / Crítica",
+    "classificationGroup": "Confidencial",
+    "confidentiality": 2,
+    "integrity": 4,
+    "availability": 4,
+    "controls": [
+      "8.8",
+      "8.20"
+    ],
+    "dataNature": "documented",
+    "source": "ALE-SGI-ACT-01_Inventario_Activos_Alestra_v02.xlsx (hoja 'Inventario_Activos')"
+  },
+  {
+    "id": "ACT-RED-03",
+    "category": "Componentes de Red",
+    "name": "Cableado Estructurado e Interfaces de Red",
+    "environment": "Data Center / Nodos NOC",
+    "owner": "Infraestructura Física",
+    "classification": "Confidencial / Crítica",
+    "classificationGroup": "Confidencial",
+    "confidentiality": 1,
+    "integrity": 3,
+    "availability": 4,
+    "controls": [
+      "7.12"
+    ],
+    "dataNature": "documented",
+    "source": "ALE-SGI-ACT-01_Inventario_Activos_Alestra_v02.xlsx (hoja 'Inventario_Activos')"
+  },
+  {
+    "id": "ACT-PER-01",
+    "category": "Personas",
+    "name": "Personal Técnico Certificado Nivel 1 (NOC)",
+    "environment": "Mesa de Servicio NOC",
+    "owner": "Gerencia Mesa de Servicio",
+    "classification": "Confidencial / Crítica",
+    "classificationGroup": "Confidencial",
+    "confidentiality": 2,
+    "integrity": 3,
+    "availability": 4,
+    "controls": [
+      "6.3",
+      "6.6"
+    ],
+    "dataNature": "documented",
+    "source": "ALE-SGI-ACT-01_Inventario_Activos_Alestra_v02.xlsx (hoja 'Inventario_Activos')"
+  },
+  {
+    "id": "ACT-PER-02",
+    "category": "Personas",
+    "name": "Personal Técnico Especializado Nivel 2 y Nivel 3",
+    "environment": "Área de Diagnóstico Avanzado",
+    "owner": "Soporte Técnico de Redes",
+    "classification": "Confidencial / Crítica",
+    "classificationGroup": "Confidencial",
+    "confidentiality": 3,
+    "integrity": 4,
+    "availability": 4,
+    "controls": [
+      "6.3",
+      "6.6"
+    ],
+    "dataNature": "documented",
+    "source": "ALE-SGI-ACT-01_Inventario_Activos_Alestra_v02.xlsx (hoja 'Inventario_Activos')"
+  },
+  {
+    "id": "ACT-PER-03",
+    "category": "Personas",
+    "name": "Analistas e Ingenieros del SOC 24/7",
+    "environment": "Centro de Ciberseguridad SOC",
+    "owner": "Dirección de Ciberseguridad",
+    "classification": "Confidencial / Crítica",
+    "classificationGroup": "Confidencial",
+    "confidentiality": 4,
+    "integrity": 4,
+    "availability": 4,
+    "controls": [
+      "6.3",
+      "6.6"
+    ],
+    "dataNature": "documented",
+    "source": "ALE-SGI-ACT-01_Inventario_Activos_Alestra_v02.xlsx (hoja 'Inventario_Activos')"
+  },
+  {
+    "id": "ACT-PER-04",
+    "category": "Personas",
+    "name": "Órganos de Gobierno (Consejo Axtel y Director)",
+    "environment": "Oficinas Corporativas",
+    "owner": "Dirección General",
+    "classification": "Confidencial / Crítica",
+    "classificationGroup": "Confidencial",
+    "confidentiality": 4,
+    "integrity": 4,
+    "availability": 4,
+    "controls": [
+      "5.2",
+      "6.3"
+    ],
+    "dataNature": "documented",
+    "source": "ALE-SGI-ACT-01_Inventario_Activos_Alestra_v02.xlsx (hoja 'Inventario_Activos')"
+  }
+]
