@@ -1,0 +1,162 @@
+[
+  {
+    "id": "RACI-01",
+    "activity": "Recepción y registro de reportes, solicitudes o alertas",
+    "process": "ALE-CP-01",
+    "roles": [
+      { "role": "Mesa de servicio / recepción", "letter": "R" },
+      { "role": "Responsable del proceso", "letter": "A" },
+      { "role": "NOC / personal técnico autorizado", "letter": "C" },
+      { "role": "SOC / Seguridad, cuando aplique", "letter": "I" }
+    ],
+    "notes": "Matriz propuesta a partir de los roles de ALE-PR-01; no asigna nombres reales.",
+    "sourceDocument": "ALE-PR-01_Procedimiento_Atencion_Internet_Empresarial.docx",
+    "sourceStatus": "equivalente_documentado",
+    "evidenceStatus": "pendiente_validacion",
+    "academicLabel": "Propuesta académica — validación pendiente"
+  },
+  {
+    "id": "RACI-02",
+    "activity": "Validación y clasificación del caso",
+    "process": "ALE-CP-01",
+    "roles": [
+      { "role": "Mesa de servicio / recepción", "letter": "R" },
+      { "role": "Responsable del proceso", "letter": "A" },
+      { "role": "NOC / personal técnico autorizado", "letter": "C" },
+      { "role": "SOC / Seguridad, cuando aplique", "letter": "C" }
+    ],
+    "notes": "La clasificación definitiva depende del procedimiento y del SLA aplicable.",
+    "sourceDocument": "ALE-PR-01_Procedimiento_Atencion_Internet_Empresarial.docx",
+    "sourceStatus": "equivalente_documentado",
+    "evidenceStatus": "pendiente_validacion",
+    "academicLabel": "Propuesta académica — validación pendiente"
+  },
+  {
+    "id": "RACI-03",
+    "activity": "Diagnóstico inicial y pruebas técnicas",
+    "process": "ALE-CP-01",
+    "roles": [
+      { "role": "NOC / personal técnico autorizado", "letter": "R" },
+      { "role": "Responsable del proceso", "letter": "A" },
+      { "role": "Mesa de servicio / recepción", "letter": "C" },
+      { "role": "SOC / Seguridad, cuando aplique", "letter": "C" }
+    ],
+    "notes": "Rol responsable propuesto para el diagnóstico de red.",
+    "sourceDocument": "ALE-PR-01_Procedimiento_Atencion_Internet_Empresarial.docx",
+    "sourceStatus": "equivalente_documentado",
+    "evidenceStatus": "pendiente_validacion",
+    "academicLabel": "Propuesta académica — validación pendiente"
+  },
+  {
+    "id": "RACI-04",
+    "activity": "Decisión de escalamiento técnico o al SOC",
+    "process": "ALE-CP-01",
+    "roles": [
+      { "role": "Responsable del proceso", "letter": "A" },
+      { "role": "NOC / personal técnico autorizado", "letter": "R" },
+      { "role": "SOC / Seguridad, cuando aplique", "letter": "C" },
+      { "role": "Mesa de servicio / recepción", "letter": "I" }
+    ],
+    "notes": "La decisión humana permanece en el responsable del proceso.",
+    "sourceDocument": "ALE-PR-01_Procedimiento_Atencion_Internet_Empresarial.docx",
+    "sourceStatus": "equivalente_documentado",
+    "evidenceStatus": "pendiente_validacion",
+    "academicLabel": "Propuesta académica — validación pendiente"
+  },
+  {
+    "id": "RACI-05",
+    "activity": "Atención autorizada y acciones de restauración",
+    "process": "ALE-CP-01",
+    "roles": [
+      { "role": "NOC / personal técnico autorizado", "letter": "R" },
+      { "role": "Responsable del proceso", "letter": "A" },
+      { "role": "SOC / Seguridad, cuando aplique", "letter": "C" },
+      { "role": "Mesa de servicio / recepción", "letter": "I" }
+    ],
+    "notes": "Solo acciones autorizadas; sin conexión a infraestructura real.",
+    "sourceDocument": "ALE-PR-01_Procedimiento_Atencion_Internet_Empresarial.docx",
+    "sourceStatus": "equivalente_documentado",
+    "evidenceStatus": "pendiente_validacion",
+    "academicLabel": "Propuesta académica — validación pendiente"
+  },
+  {
+    "id": "RACI-06",
+    "activity": "Verificación del servicio y pruebas de cierre",
+    "process": "ALE-CP-01",
+    "roles": [
+      { "role": "NOC / personal técnico autorizado", "letter": "R" },
+      { "role": "Responsable del proceso", "letter": "A" },
+      { "role": "Mesa de servicio / recepción", "letter": "C" },
+      { "role": "SOC / Seguridad, cuando aplique", "letter": "I" }
+    ],
+    "notes": "La evidencia de verificación se registra en el formato correspondiente.",
+    "sourceDocument": "ALE-PR-01_Procedimiento_Atencion_Internet_Empresarial.docx",
+    "sourceStatus": "equivalente_documentado",
+    "evidenceStatus": "pendiente_validacion",
+    "academicLabel": "Propuesta académica — validación pendiente"
+  },
+  {
+    "id": "RACI-07",
+    "activity": "Comunicación al solicitante y cierre documentado",
+    "process": "ALE-CP-01",
+    "roles": [
+      { "role": "Mesa de servicio / recepción", "letter": "R" },
+      { "role": "Responsable del proceso", "letter": "A" },
+      { "role": "NOC / personal técnico autorizado", "letter": "C" },
+      { "role": "SOC / Seguridad, cuando aplique", "letter": "I" }
+    ],
+    "notes": "El cierre requiere registro de evidencia y comunicación.",
+    "sourceDocument": "ALE-PR-01_Procedimiento_Atencion_Internet_Empresarial.docx",
+    "sourceStatus": "equivalente_documentado",
+    "evidenceStatus": "pendiente_validacion",
+    "academicLabel": "Propuesta académica — validación pendiente"
+  },
+  {
+    "id": "RACI-08",
+    "activity": "Evaluación de impacto y autorización de cambios de red",
+    "process": "SGI-TI-01",
+    "roles": [
+      { "role": "Responsable del proceso", "letter": "A" },
+      { "role": "NOC / personal técnico autorizado", "letter": "R" },
+      { "role": "SOC / Seguridad, cuando aplique", "letter": "C" },
+      { "role": "Mesa de servicio / recepción", "letter": "I" }
+    ],
+    "notes": "Actividad propuesta en ALE-PR-02 (borrador académico).",
+    "sourceDocument": "README_Actualizacion_SGI_Dash_Alestra_OpenCode.md",
+    "sourceStatus": "no_aplica",
+    "evidenceStatus": "pendiente_validacion",
+    "academicLabel": "Borrador académico — pendiente de validación"
+  },
+  {
+    "id": "RACI-09",
+    "activity": "Preservación de evidencia y escalamiento al SOC",
+    "process": "SGI-TI-01",
+    "roles": [
+      { "role": "SOC / Seguridad, cuando aplique", "letter": "A" },
+      { "role": "NOC / personal técnico autorizado", "letter": "R" },
+      { "role": "Responsable del proceso", "letter": "C" },
+      { "role": "Mesa de servicio / recepción", "letter": "I" }
+    ],
+    "notes": "Actividad propuesta en ALE-PR-03 (borrador académico).",
+    "sourceDocument": "README_Actualizacion_SGI_Dash_Alestra_OpenCode.md",
+    "sourceStatus": "no_aplica",
+    "evidenceStatus": "pendiente_validacion",
+    "academicLabel": "Borrador académico — pendiente de validación"
+  },
+  {
+    "id": "RACI-10",
+    "activity": "Revisión de riesgos, requisitos e indicadores",
+    "process": "SGI-RIES-01",
+    "roles": [
+      { "role": "Responsable del proceso", "letter": "A" },
+      { "role": "NOC / personal técnico autorizado", "letter": "R" },
+      { "role": "SOC / Seguridad, cuando aplique", "letter": "C" },
+      { "role": "Mesa de servicio / recepción", "letter": "I" }
+    ],
+    "notes": "La revisión es propuesta; no hay resultados de seguimiento registrados.",
+    "sourceDocument": "ALE-SGI-OBJ-01_Matriz_Objetivos_e_Indicadores.xlsx; ALE-Declaracion de Aplicabilidad SoA ISO27001 SGI-01.docx",
+    "sourceStatus": "equivalente_documentado",
+    "evidenceStatus": "pendiente_validacion",
+    "academicLabel": "Propuesta académica — validación pendiente"
+  }
+]

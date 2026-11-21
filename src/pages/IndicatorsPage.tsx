@@ -1,12 +1,15 @@
 import { CircleAlert, ClipboardList, Info, Target } from "lucide-react";
-import { DataNatureBadge, MeasurementBadge } from "../components/common/Badge";
+import { Badge, DataNatureBadge, MeasurementBadge } from "../components/common/Badge";
 import { EmptyState } from "../components/common/EmptyState";
 import { PageIntro } from "../components/common/PageIntro";
+import { SourceLabel } from "../components/common/SourceLabel";
+import { StatusBadge } from "../components/common/StatusBadge";
 import { DataTable } from "../components/tables/DataTable";
-import { objectives } from "../lib/data";
-import type { Objective } from "../types";
+import { kpis, objectives } from "../lib/data";
+import type { KpiRecord, Objective } from "../types";
 
 const rules = [
+  "OBJ-01 a OBJ-04 son la base documentada; PROP-05 a PROP-08 son propuestas pendientes de aprobación.",
   "Las metas son propuestas de diseño; no son resultados medidos.",
   "Si no existe medición, se muestra «Sin medición» o «Pendiente».",
   "No se generan series temporales ficticias que parezcan datos históricos reales.",
@@ -15,76 +18,96 @@ const rules = [
 ];
 
 export function IndicatorsPage() {
+  const baseKpis = kpis.filter((kpi) => kpi.code.startsWith("OBJ-"));
+  const proposedKpis = kpis.filter((kpi) => kpi.code.startsWith("PROP-"));
+
   return (
     <div className="page-stack">
       <PageIntro
-        eyebrow="ALE-SGI-OBJ-01 · matriz de objetivos"
+        eyebrow="Evaluar · matriz de objetivos e indicadores"
         title="Indicadores del proceso"
-        description="Cuatro objetivos vinculados a ALE-CP-01, con fórmula, meta propuesta, frecuencia y responsable sugerido. La hoja de seguimiento del archivo fuente no contiene mediciones registradas."
-        actions={<DataNatureBadge nature="proposed" />}
+        description="Ocho indicadores: cuatro objetivos documentados (OBJ-01 a OBJ-04) y cuatro propuestas pendientes de aprobación (PROP-05 a PROP-08). Fórmula, fuente, frecuencia, responsable y evidencia esperada sin resultados inventados."
+        actions={<Badge tone="violet">8 indicadores</Badge>}
       />
 
       <div className="notice notice--academic">
         <CircleAlert size={18} aria-hidden="true" />
         <div>
           <strong>No hay resultados operativos en esta versión.</strong> Uptime
-          &gt;99.9% y MTTR &lt;2h son metas propuestas; SLA es «Según SLA
-          contratado» y CSAT está «Por definir».
+          &gt;99.9% y MTTR &lt;2h son metas propuestas; SLA depende del contrato
+          aplicable y CSAT está «Por definir». Las cuatro propuestas adicionales
+          tampoco tienen medición registrada.
         </div>
       </div>
 
-      <div className="objective-grid">
-        {objectives.map((objective) => (
-          <article className="objective-card" key={objective.id}>
-            <header>
-              <span className="objective-card__id">{objective.id}</span>
-              <MeasurementBadge status={objective.measurementStatus} />
-            </header>
-            <h3>{objective.indicator}</h3>
-            <p>{objective.title}</p>
-            <dl>
-              <div>
-                <dt>Meta propuesta</dt>
-                <dd>{objective.target}</dd>
-              </div>
-              <div>
-                <dt>Frecuencia</dt>
-                <dd>{objective.frequency}</dd>
-              </div>
-            </dl>
-          </article>
-        ))}
-      </div>
+      <section aria-labelledby="kpis-base">
+        <div className="section-heading">
+          <h3 id="kpis-base">Base documentada · OBJ-01 a OBJ-04</h3>
+          <span className="section-heading__hint">Fuente: matriz de objetivos e indicadores</span>
+        </div>
+        <div className="objective-grid">
+          {baseKpis.map((kpi) => (
+            <article className="objective-card" key={`base-${kpi.id}`}>
+              <header>
+                <span className="objective-card__id">{kpi.code}</span>
+                <StatusBadge status={kpi.evidenceStatus} />
+              </header>
+              <h3>{kpi.name}</h3>
+              <p>{kpi.definition}</p>
+              <dl>
+                <div><dt>Meta propuesta</dt><dd>{kpi.target}</dd></div>
+                <div><dt>Frecuencia</dt><dd>{kpi.frequency}</dd></div>
+              </dl>
+            </article>
+          ))}
+        </div>
+      </section>
 
-      <section className="panel" aria-labelledby="objetivos-tabla">
+      <section aria-labelledby="kpis-propuestos">
+        <div className="section-heading">
+          <h3 id="kpis-propuestos">Propuestos · PROP-05 a PROP-08</h3>
+          <span className="section-heading__hint">Pendientes de aprobación; sin medición</span>
+        </div>
+        <div className="objective-grid">
+          {proposedKpis.map((kpi) => (
+            <article className="objective-card objective-card--proposed" key={`prop-${kpi.id}`}>
+              <header>
+                <span className="objective-card__id">{kpi.code}</span>
+                <StatusBadge status={kpi.evidenceStatus} />
+              </header>
+              <h3>{kpi.name}</h3>
+              <p>{kpi.definition}</p>
+              <dl>
+                <div><dt>Meta</dt><dd>{kpi.target}</dd></div>
+                <div><dt>Estado</dt><dd>{kpi.statusLabel}</dd></div>
+              </dl>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="panel" aria-labelledby="kpis-tabla">
         <div className="panel__header">
           <div>
-            <h2 id="objetivos-tabla">Detalle de objetivos</h2>
-            <p>Fuente: ALE-SGI-OBJ-01, hoja Objetivos_SGI (propuesta académica).</p>
+            <h2 id="kpis-tabla">Fichas de los ocho indicadores</h2>
+            <p>Numerador, denominador, fuente de datos y evidencia esperada.</p>
           </div>
-          <span className="panel__count">{objectives.length} objetivos</span>
+          <span className="panel__count">{kpis.length} indicadores</span>
         </div>
-        <DataTable<Objective>
+        <DataTable<KpiRecord>
           compact
           rowKey={(row) => row.id}
+          rows={kpis}
           columns={[
-            { key: "id", header: "ID", render: (row) => <strong>{row.id}</strong> },
-            { key: "title", header: "Objetivo", render: (row) => row.title },
-            { key: "indicator", header: "Indicador", render: (row) => row.indicator },
-            {
-              key: "formula",
-              header: "Fórmula / método",
-              render: (row) => <span className="text-muted">{row.formula}</span>,
-            },
-            { key: "target", header: "Meta", render: (row) => <strong>{row.target}</strong> },
+            { key: "code", header: "Código", render: (row) => <strong>{row.code}</strong> },
+            { key: "name", header: "Indicador", render: (row) => row.name },
+            { key: "formula", header: "Fórmula", render: (row) => <span className="clamp-2">{row.formula}</span> },
+            { key: "target", header: "Meta", render: (row) => row.target },
+            { key: "unit", header: "Unidad", render: (row) => row.unit },
             { key: "frequency", header: "Frecuencia", render: (row) => row.frequency },
-            {
-              key: "measurement",
-              header: "Última medición",
-              render: () => <MeasurementBadge status="not_measured" />,
-            },
+            { key: "result", header: "Resultado", render: () => <MeasurementBadge status="not_measured" /> },
+            { key: "status", header: "Estado", render: (row) => <StatusBadge status={row.evidenceStatus} /> },
           ]}
-          rows={objectives}
         />
       </section>
 
@@ -98,31 +121,53 @@ export function IndicatorsPage() {
             <Target size={20} aria-hidden="true" />
           </div>
           <ul className="bullet-list">
-            {rules.map((rule) => (
-              <li key={rule}>{rule}</li>
-            ))}
+            {rules.map((rule) => <li key={rule}>{rule}</li>)}
           </ul>
         </section>
 
         <section className="panel" aria-labelledby="evidencia-title">
           <div className="panel__header">
             <div>
-              <h2 id="evidencia-title">Evidencia y responsables</h2>
-              <p>Campos documentados en la matriz de objetivos.</p>
+              <h2 id="evidencia-title">Responsables y evidencia</h2>
+              <p>Campos documentados en la matriz de objetivos y propuestas.</p>
             </div>
             <ClipboardList size={20} aria-hidden="true" />
           </div>
           <ul className="stack-list">
-            {objectives.map((objective) => (
-              <li key={objective.id}>
-                <strong>{objective.id} · {objective.indicator}</strong>
-                <span>{objective.evidence}</span>
-                <span className="text-muted">Responsable propuesto: {objective.owner}</span>
+            {kpis.map((kpi) => (
+              <li key={`evidence-${kpi.id}`}>
+                <strong>{kpi.code} · {kpi.name}</strong>
+                <span>{kpi.expectedEvidence}</span>
+                <span className="text-muted">Responsable: {kpi.owner}</span>
+                <SourceLabel source={kpi} compact />
               </li>
             ))}
           </ul>
         </section>
       </div>
+
+      <section className="panel" aria-labelledby="objetivos-tabla">
+        <div className="panel__header">
+          <div>
+            <h2 id="objetivos-tabla">Matriz de objetivos fuente</h2>
+            <p>Fuente: ALE-SGI-OBJ-01, hoja Objetivos_SGI (propuesta académica).</p>
+          </div>
+          <span className="panel__count">{objectives.length} objetivos</span>
+        </div>
+        <DataTable<Objective>
+          compact
+          rowKey={(row) => row.id}
+          columns={[
+            { key: "id", header: "ID", render: (row) => <strong>{row.id}</strong> },
+            { key: "title", header: "Objetivo", render: (row) => row.title },
+            { key: "indicator", header: "Indicador", render: (row) => row.indicator },
+            { key: "evidence", header: "Evidencia", render: (row) => <span className="clamp-2">{row.evidence}</span> },
+            { key: "nature", header: "Naturaleza", render: (row) => <DataNatureBadge nature={row.dataNature} /> },
+            { key: "measurement", header: "Última medición", render: () => <MeasurementBadge status="not_measured" /> },
+          ]}
+          rows={objectives}
+        />
+      </section>
 
       <section className="panel" aria-labelledby="sin-series">
         <div className="panel__header">

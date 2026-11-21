@@ -1,0 +1,65 @@
+[
+  {
+    "id": "REP-01",
+    "name": "Reporte ejecutivo — tercera parcial",
+    "audience": "Dirección y personas no especializadas en seguridad informática.",
+    "purpose": "Explicar en lenguaje claro la necesidad, el alcance, la arquitectura general del SGI, las políticas, los principales riesgos, controles, indicadores, auditoría, mejora, beneficios y retos.",
+    "outline": [
+      "Necesidad y contexto del caso académico",
+      "Alcance de ALE-CP-01",
+      "Arquitectura general del SGI y del portal",
+      "Políticas y responsables por rol",
+      "Principales riesgos y controles",
+      "Indicadores con metas propuestas y sin medición",
+      "Auditoría, hallazgos y mejora continua",
+      "Beneficios esperados y retos pendientes"
+    ],
+    "cover": [
+      { "field": "Empresa", "value": "Alestra", "status": "Confirmado en expediente" },
+      { "field": "Domicilio", "value": "Pendiente de confirmar", "status": "Dato académico por completar" },
+      { "field": "Teléfono", "value": "Pendiente de confirmar", "status": "Dato académico por completar" },
+      { "field": "Correo", "value": "Pendiente de confirmar", "status": "Dato académico por completar" },
+      { "field": "Sitio web", "value": "Pendiente de confirmar", "status": "Dato académico por completar" },
+      { "field": "Integrantes del equipo consultor", "value": "Pendiente de confirmar y revisar ortografía según Plan de Proyecto SGI", "status": "Dato académico por completar" },
+      { "field": "Fecha de entrega", "value": "Pendiente de confirmar", "status": "Dato académico por completar" }
+    ],
+    "file": null,
+    "status": "Reporte pendiente de elaboración",
+    "sourceDocument": "README_Actualizacion_SGI_Dash_Alestra_OpenCode.md",
+    "sourceStatus": "pendiente_incorporar",
+    "evidenceStatus": "pendiente_validacion"
+  },
+  {
+    "id": "REP-02",
+    "name": "Reporte técnico — tercera parcial",
+    "audience": "Equipo técnico y docentes de la actividad integradora.",
+    "purpose": "Describir arquitectura del dashboard, tecnologías, estructura de datos, módulos, proceso ALE-CP-01, controles, trazabilidad, procedimientos, formatos, indicadores, auditoría, seguridad, despliegue y limitaciones técnicas.",
+    "outline": [
+      "Arquitectura: Vite, React, TypeScript, CSS, Recharts y Lucide",
+      "Estructura de datos JSON local y capa dataProvider",
+      "Módulos y navegación por hash bajo /Alestra/",
+      "Ficha y flujo de ALE-CP-01",
+      "Controles SoA y matriz de requisitos",
+      "Matriz de trazabilidad y brechas",
+      "Procedimientos y formatos utilizables",
+      "Indicadores y reglas de no medición inventada",
+      "Auditoría, hallazgos y mejora",
+      "Seguridad, privacidad y despliegue con GitHub Actions",
+      "Funciones demostrativas versus propuestas; sin conexión a infraestructura real"
+    ],
+    "cover": [
+      { "field": "Empresa", "value": "Alestra", "status": "Confirmado en expediente" },
+      { "field": "Domicilio", "value": "Pendiente de confirmar", "status": "Dato académico por completar" },
+      { "field": "Teléfono", "value": "Pendiente de confirmar", "status": "Dato académico por completar" },
+      { "field": "Correo", "value": "Pendiente de confirmar", "status": "Dato académico por completar" },
+      { "field": "Sitio web", "value": "Pendiente de confirmar", "status": "Dato académico por completar" },
+      { "field": "Integrantes del equipo consultor", "value": "Pendiente de confirmar y revisar ortografía según Plan de Proyecto SGI", "status": "Dato académico por completar" },
+      { "field": "Fecha de entrega", "value": "Pendiente de confirmar", "status": "Dato académico por completar" }
+    ],
+    "file": null,
+    "status": "Reporte pendiente de elaboración",
+    "sourceDocument": "README_Actualizacion_SGI_Dash_Alestra_OpenCode.md",
+    "sourceStatus": "pendiente_incorporar",
+    "evidenceStatus": "pendiente_validacion"
+  }
+]

@@ -1,0 +1,58 @@
+[
+  {
+    "id": "AUD-INT-01",
+    "type": "Auditoría interna del SGSI de Alestra",
+    "name": "Plan de auditoría interna del SGSI (Alestra)",
+    "status": "Planeado · pendiente de ejecución",
+    "objective": "Verificar la conformidad del SGSI propuesto con los criterios definidos para ALE-CP-01.",
+    "scope": "Proceso ALE-CP-01 y elementos del SGSI documentados en el expediente académico. No incluye operación real de Alestra.",
+    "criteria": [
+      "ISO/IEC 27001:2022 y SoA disponible",
+      "Documentos del SGI y procedimientos ALE-PR-01 a ALE-PR-03",
+      "Matriz de riesgos y matriz de requisitos y aplicabilidad"
+    ],
+    "schedule": "Pendiente de definir",
+    "auditors": "Pendiente de designar",
+    "auditees": "Pendiente de designar",
+    "method": "Revisión documental y entrevistas propuestas; sin ejecución registrada.",
+    "samples": "Pendiente de definir",
+    "checklist": [
+      "Áreas sugeridas: contexto y alcance del SGI",
+      "Áreas sugeridas: liderazgo y responsables por rol",
+      "Áreas sugeridas: riesgos y tratamiento",
+      "Áreas sugeridas: SoA y controles seleccionados",
+      "Áreas sugeridas: procedimientos y registros",
+      "Áreas sugeridas: indicadores y evidencia de medición",
+      "Áreas sugeridas: acciones de mejora y seguimiento"
+    ],
+    "evidenceObserved": [],
+    "results": "Sin resultados: la auditoría no ha sido ejecutada en este portal.",
+    "notes": "El plan y el cuestionario citados en la guía no están en docs/; no se publica contenido inventado como si fuera el documento fuente.",
+    "sourceDocument": "Planificacion_de_Auditoria_SGI_Alestra.docx; Cuestionario_de_Auditoria_ISO27001_Alestra.docx",
+    "sourceStatus": "pendiente_incorporar",
+    "evidenceStatus": "sin_evidencia",
+    "academicLabel": "Planeado — pendiente de ejecución"
+  },
+  {
+    "id": "AUD-EXT-FINCA-01",
+    "type": "Auditoría de Alestra a La Finca del Barrio",
+    "name": "Auditoría de Alestra a La Finca del Barrio",
+    "status": "Ejercicio separado · pendiente de incorporar",
+    "objective": "Mantener como expediente independiente el ejercicio de auditoría realizado por Alestra a La Finca del Barrio.",
+    "scope": "Ejercicio académico independiente; sus resultados no se incorporan a la auditoría interna del SGSI de Alestra.",
+    "criteria": ["Documentación del ejercicio separado pendiente de incorporar"],
+    "schedule": "Pendiente de definir",
+    "auditors": "Pendiente de confirmar",
+    "auditees": "La Finca del Barrio (ejercicio académico)",
+    "method": "No incorporado; solo se registra la existencia del plan citado.",
+    "samples": "Pendiente de definir",
+    "checklist": ["Obtener y revisar el plan ALE-SGI-AUD-02 y el cuestionario correspondiente"],
+    "evidenceObserved": [],
+    "results": "No disponible en este portal; no mezclar con hallazgos internos de Alestra.",
+    "notes": "El archivo ALE-SGI-AUD-02_Plan_Auditoria_Alestra_a_La_Finca.docx no está en docs/.",
+    "sourceDocument": "ALE-SGI-AUD-02_Plan_Auditoria_Alestra_a_La_Finca.docx",
+    "sourceStatus": "pendiente_incorporar",
+    "evidenceStatus": "sin_evidencia",
+    "academicLabel": "Ejercicio independiente"
+  }
+]

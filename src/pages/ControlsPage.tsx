@@ -3,6 +3,8 @@ import { Info, ShieldCheck } from "lucide-react";
 import { DataNatureBadge, TreatmentBadge } from "../components/common/Badge";
 import { DetailDrawer, DetailField, DetailSection } from "../components/common/DetailDrawer";
 import { PageIntro } from "../components/common/PageIntro";
+import { SourceLabel } from "../components/common/SourceLabel";
+import { StatusBadge } from "../components/common/StatusBadge";
 import { FilterBar } from "../components/tables/FilterBar";
 import { DataTable } from "../components/tables/DataTable";
 import { controls } from "../lib/data";
@@ -142,6 +144,7 @@ export function ControlsPage() {
           <li>El documento aclara la equivalencia entre la numeración ISO/IEC 27001:2013 y la de 2022.</li>
           <li>La relación con riesgos se toma únicamente de los controles referenciados en la matriz de riesgos; si no aparece, se indica «No documentado».</li>
           <li>El estado de implantación no está indicado en la fuente: se muestra «No especificado» o «Pendiente de validación».</li>
+          <li>Los controles 8.15, 8.16 y 8.17 aparecen en políticas y matrices, pero no en la tabla SoA disponible: se mantienen como referencias no confirmadas.</li>
           <li>Los controles relacionados con políticas operativas se resumen en la sección de Documentación.</li>
         </ul>
       </section>
@@ -161,6 +164,7 @@ export function ControlsPage() {
               </span>
               <TreatmentBadge status={selected.status} />
               <DataNatureBadge nature={selected.dataNature} />
+              <StatusBadge status={selected.evidenceStatus} />
             </div>
 
             <DetailSection title="Justificación y nota normativa">
@@ -177,6 +181,10 @@ export function ControlsPage() {
                   No especificado · pendiente de validación
                 </DetailField>
               </dl>
+            </DetailSection>
+
+            <DetailSection title="Procedencia">
+              <SourceLabel source={selected} />
             </DetailSection>
           </>
         )}

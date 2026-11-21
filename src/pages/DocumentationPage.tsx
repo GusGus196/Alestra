@@ -1,3 +1,4 @@
+import { useMemo, useState } from "react";
 import {
   BookOpen,
   CircleAlert,
@@ -9,13 +10,36 @@ import {
 } from "lucide-react";
 import { DataNatureBadge } from "../components/common/Badge";
 import { PageIntro } from "../components/common/PageIntro";
+import { DocumentCard } from "../components/documents/DocumentCard";
+import { DocumentViewer } from "../components/documents/DocumentViewer";
 import { DataTable } from "../components/tables/DataTable";
-import { meta, risks, assets, controls } from "../lib/data";
-import type { ProjectMeta } from "../types";
+import { FilterBar } from "../components/tables/FilterBar";
+import { assets, controls, documents, meta, risks } from "../lib/data";
+import { normalizeText } from "../lib/formatters";
+import type { DocumentRecord, ProjectMeta } from "../types";
 
 type DocumentRow = ProjectMeta["documents"][number];
 
 export function DocumentationPage() {
+  const [search, setSearch] = useState("");
+  const [category, setCategory] = useState("all");
+  const [selected, setSelected] = useState<DocumentRecord | null>(null);
+
+  const categories = [...new Set(documents.map((item) => item.category))].sort((a, b) =>
+    a.localeCompare(b, "es"),
+  );
+
+  const filtered = useMemo(() => {
+    const term = normalizeText(search.trim());
+    return documents.filter((item) => {
+      const matchesText =
+        !term ||
+        normalizeText(`${item.code} ${item.name} ${item.description} ${item.owner}`).includes(term);
+      const matchesCategory = category === "all" || item.category === category;
+      return matchesText && matchesCategory;
+    });
+  }, [search, category]);
+
   return (
     <div className="page-stack">
       <PageIntro
@@ -56,11 +80,60 @@ export function DocumentationPage() {
         </div>
       </section>
 
+      <section aria-labelledby="catalogo-title">
+        <div className="section-heading">
+          <h3 id="catalogo-title">Catálogo documental</h3>
+          <span className="section-heading__hint">
+            {documents.length} fichas · {documents.filter((item) => item.file === null).length} archivos pendientes de incorporar
+          </span>
+        </div>
+        <div className="notice notice--muted">
+          <CircleAlert size={18} aria-hidden="true" />
+          <div>
+            Cada ficha conserva código, versión, fecha, responsable,
+            clasificación, relaciones y procedencia. Ningún registro incluye un
+            enlace de descarga roto: cuando el archivo no está publicado se indica
+            «Archivo pendiente de incorporar».
+          </div>
+        </div>
+        <div className="panel">
+          <FilterBar
+            search={search}
+            onSearch={setSearch}
+            searchPlaceholder="Buscar por código, nombre, descripción o responsable…"
+            filters={[
+              {
+                label: "Categoría",
+                value: category,
+                onChange: setCategory,
+                options: [
+                  { value: "all", label: "Todas las categorías" },
+                  ...categories.map((value) => ({ value, label: value })),
+                ],
+              },
+            ]}
+            resultLabel={`${filtered.length} de ${documents.length} fichas`}
+          />
+        </div>
+        {filtered.length > 0 ? (
+          <div className="document-grid">
+            {filtered.map((document) => (
+              <DocumentCard key={document.id} document={document} onOpen={setSelected} />
+            ))}
+          </div>
+        ) : (
+          <div className="empty-state" role="status">
+            <strong>Sin resultados</strong>
+            <p>Ajusta la búsqueda o el filtro de categoría.</p>
+          </div>
+        )}
+      </section>
+
       <section className="panel" aria-labelledby="documentos-title">
         <div className="panel__header">
           <div>
             <h2 id="documentos-title">Documentos fuente</h2>
-            <p>Inventario documental del expediente académico.</p>
+            <p>Inventario original del expediente académico; los nombres de archivo se muestran como referencia, no como enlaces.</p>
           </div>
           <FileText size={20} aria-hidden="true" />
         </div>
@@ -71,7 +144,7 @@ export function DocumentationPage() {
           columns={[
             { key: "code", header: "Código", render: (row) => <strong>{row.code}</strong> },
             { key: "name", header: "Documento", render: (row) => row.name },
-            { key: "file", header: "Archivo", render: (row) => <span className="text-muted">{row.file}</span> },
+            { key: "file", header: "Archivo fuente", render: (row) => <span className="text-muted">{row.file}</span> },
             { key: "version", header: "Versión", render: (row) => row.version },
             { key: "status", header: "Estado documental", render: (row) => row.status },
             { key: "use", header: "Uso en el proyecto", render: (row) => row.use },
@@ -229,6 +302,8 @@ export function DocumentationPage() {
           </div>
         </section>
       </div>
+
+      <DocumentViewer document={selected} onClose={() => setSelected(null)} />
     </div>
   );
 }

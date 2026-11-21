@@ -13,6 +13,10 @@
     "reportedUptime": "99.95%",
     "dataNature": "simulated",
     "simulationNotice": "SIMULACIÓN ACADÉMICA — NO ES UN INCIDENTE REAL",
-    "source": "ALE-Manual SGI Alestra-01.docx, registro F-01 (sección 3)"
+    "source": "ALE-Manual SGI Alestra-01.docx, registro F-01 (sección 3)",
+    "sourceDocument": "ALE-Manual SGI Alestra-01.docx, registro F-01 (sección 3)",
+    "sourceStatus": "equivalente_documentado",
+    "evidenceStatus": "simulacion_academica",
+    "academicLabel": "SIMULACIÓN ACADÉMICA — NO ES UN INCIDENTE REAL"
   }
 ]

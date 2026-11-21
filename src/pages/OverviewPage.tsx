@@ -2,10 +2,16 @@ import {
   Activity,
   ArrowRight,
   Boxes,
+  Building2,
   CircleAlert,
+  ClipboardCheck,
   ClipboardList,
+  FileCheck2,
+  FileStack,
   Gauge,
   Layers3,
+  ListChecks,
+  Route as RouteIcon,
   ShieldAlert,
   ShieldCheck,
 } from "lucide-react";
@@ -24,7 +30,20 @@ import { Badge, DataNatureBadge } from "../components/common/Badge";
 import { PageIntro } from "../components/common/PageIntro";
 import { ChartPanel } from "../components/charts/ChartPanel";
 import { CHART_AXIS, CHART_BLUE, CHART_GRID, LEVEL_COLORS } from "../components/charts/palette";
-import { assets, controls, meta, risks } from "../lib/data";
+import {
+  assets,
+  audits,
+  controls,
+  correctiveActions,
+  documents,
+  findings,
+  forms,
+  improvementActions,
+  kpis,
+  meta,
+  procedures,
+  risks,
+} from "../lib/data";
 import { categoryData, countRisksByLevel, riskScoreData } from "../lib/calculations";
 import type { RouteKey } from "../app/routes";
 
@@ -32,6 +51,15 @@ export function OverviewPage({ onNavigate }: { onNavigate: (route: RouteKey) => 
   const levelCounts = countRisksByLevel(risks);
   const assetCategories = categoryData(assets);
   const riskScores = riskScoreData(risks);
+
+  const documentedFiles = documents.filter((item) => item.evidenceStatus === "documentado").length;
+  const pendingFiles = documents.filter((item) => item.file === null).length;
+  const advancePercent = documents.length
+    ? Math.round((documentedFiles / documents.length) * 100)
+    : 0;
+  const documentedProcedures = procedures.filter((item) => item.evidenceStatus === "documentado").length;
+  const simulatedForms = forms.filter((item) => item.simulationNotice).length;
+  const proposedKpis = kpis.filter((item) => item.code.startsWith("PROP-")).length;
 
   const quickLinks: Array<{
     route: RouteKey;
@@ -62,6 +90,48 @@ export function OverviewPage({ onNavigate }: { onNavigate: (route: RouteKey) => 
       title: `SoA (${controls.length})`,
       text: "Controles incluidos en la declaración fuente.",
       icon: ShieldCheck,
+    },
+    {
+      route: "organizacion",
+      title: "Organización y procesos",
+      text: "Partes interesadas, mapa de procesos y RACI por rol.",
+      icon: Building2,
+    },
+    {
+      route: "requisitos",
+      title: "Requisitos y aplicabilidad",
+      text: "Normas, marcos y decisiones pendientes de análisis.",
+      icon: ListChecks,
+    },
+    {
+      route: "procedimientos",
+      title: `Procedimientos (${procedures.length})`,
+      text: `${documentedProcedures} documentado y ${procedures.length - documentedProcedures} borradores académicos.`,
+      icon: ClipboardCheck,
+    },
+    {
+      route: "formatos",
+      title: `Formatos (${forms.length})`,
+      text: `${simulatedForms} ejemplo simulado; exportación CSV y JSON.`,
+      icon: FileStack,
+    },
+    {
+      route: "auditoria",
+      title: "Auditoría y hallazgos",
+      text: "Plan separado del ejercicio La Finca del Barrio; sin resultados.",
+      icon: ClipboardList,
+    },
+    {
+      route: "trazabilidad",
+      title: "Trazabilidad",
+      text: "Diez eslabones con «Sin vincular» cuando falta evidencia.",
+      icon: RouteIcon,
+    },
+    {
+      route: "reportes",
+      title: "Reportes",
+      text: "Portadas planificadas; PDF pendientes de elaboración.",
+      icon: FileCheck2,
     },
   ];
 
@@ -164,6 +234,31 @@ export function OverviewPage({ onNavigate }: { onNavigate: (route: RouteKey) => 
             icon={<ShieldCheck size={19} />}
             tone="blue"
           />
+        </div>
+      </section>
+
+      <section aria-labelledby="estado-expediente">
+        <div className="section-heading">
+          <h3 id="estado-expediente">Estado del expediente documental</h3>
+          <span className="section-heading__hint">
+            Avance = documentos con estado «Documentado» / total del catálogo × 100
+          </span>
+        </div>
+        <div className="mini-stat-grid">
+          <div className="mini-stat">
+            <span>Avance documental</span>
+            <strong>{advancePercent}%</strong>
+            <p className="mini-stat__note">
+              {documentedFiles}/{documents.length} documentos. No es un porcentaje de cumplimiento ISO.
+            </p>
+          </div>
+          <div className="mini-stat"><span>Documentos catalogados</span><strong>{documents.length}</strong></div>
+          <div className="mini-stat"><span>Archivos pendientes de incorporar</span><strong>{pendingFiles}</strong></div>
+          <div className="mini-stat"><span>Indicadores / propuestos</span><strong>{kpis.length} / {proposedKpis}</strong></div>
+          <div className="mini-stat"><span>Auditorías ejecutadas</span><strong>0 de {audits.length}</strong></div>
+          <div className="mini-stat"><span>Hallazgos / acciones correctivas</span><strong>{findings.length} / {correctiveActions.length}</strong></div>
+          <div className="mini-stat"><span>Acciones de mejora</span><strong>{improvementActions.length}</strong></div>
+          <div className="mini-stat"><span>Formatos utilizables</span><strong>{forms.length}</strong></div>
         </div>
       </section>
 

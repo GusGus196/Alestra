@@ -7,6 +7,8 @@ import {
 } from "../components/common/Badge";
 import { DetailDrawer, DetailField, DetailSection } from "../components/common/DetailDrawer";
 import { PageIntro } from "../components/common/PageIntro";
+import { SourceLabel } from "../components/common/SourceLabel";
+import { StatusBadge } from "../components/common/StatusBadge";
 import { RiskHeatmap } from "../components/charts/RiskHeatmap";
 import { FilterBar } from "../components/tables/FilterBar";
 import { DataTable } from "../components/tables/DataTable";
@@ -198,6 +200,7 @@ export function RisksPage() {
               <RiskLevelBadge level={selected.level} />
               <TreatmentBadge status={selected.treatmentStatus} />
               <DataNatureBadge nature={selected.dataNature} />
+              <StatusBadge status={selected.evidenceStatus} />
             </div>
 
             <div className="score-strip">
@@ -249,6 +252,10 @@ export function RisksPage() {
                   <span className="text-muted">Pendiente de evaluación</span>
                 </DetailField>
               </dl>
+            </DetailSection>
+
+            <DetailSection title="Procedencia y discrepancias">
+              <SourceLabel source={selected} />
             </DetailSection>
           </>
         )}

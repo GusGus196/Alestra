@@ -1,6 +1,6 @@
-import { useState, type ReactNode } from "react";
-import { CalendarDays, Database, Menu, X } from "lucide-react";
-import { routes, type RouteKey } from "../../app/routes";
+import { useEffect, useState, type ReactNode } from "react";
+import { CalendarDays, ChevronDown, Database, Menu, X } from "lucide-react";
+import { navigationGroups, routes, type RouteKey } from "../../app/routes";
 import { meta } from "../../lib/data";
 import { formatDate } from "../../lib/formatters";
 import { AcademicBanner } from "../common/AcademicBanner";
@@ -15,7 +15,18 @@ export function AppShell({
   children: ReactNode;
 }) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [openGroups, setOpenGroups] = useState<Record<string, boolean>>(() =>
+    Object.fromEntries(navigationGroups.map((group) => [group.label, true])),
+  );
   const current = routes.find((item) => item.key === route) ?? routes[0];
+
+  useEffect(() => {
+    const activeGroup = navigationGroups.find((group) =>
+      group.routes.some((item) => item.key === route),
+    );
+    if (!activeGroup) return;
+    setOpenGroups((currentGroups) => ({ ...currentGroups, [activeGroup.label]: true }));
+  }, [route]);
 
   const navigate = (key: RouteKey) => {
     onNavigate(key);
@@ -43,30 +54,60 @@ export function AppShell({
           </button>
         </div>
 
-        <nav className="sidebar__nav">
-          <p className="sidebar__caption">MÓDULOS</p>
-          <ul>
-            {routes.map((item) => {
-              const Icon = item.icon;
-              const active = item.key === route;
+        <nav className="sidebar__nav" aria-label="Módulos del SGI">
+          <p className="sidebar__caption">MÓDULOS DEL SGI</p>
+          <div className="sidebar__groups">
+            {navigationGroups.map((group) => {
+              const isOpen = openGroups[group.label] ?? true;
+              const hasActive = group.routes.some((item) => item.key === route);
               return (
-                <li key={item.key}>
-                  <a
-                    href={`#/${item.key}`}
-                    className={`sidebar__link ${active ? "is-active" : ""}`}
-                    aria-current={active ? "page" : undefined}
-                    onClick={(event) => {
-                      event.preventDefault();
-                      navigate(item.key);
-                    }}
+                <section className={`nav-group ${hasActive ? "is-current" : ""}`} key={group.label}>
+                  <button
+                    type="button"
+                    className="nav-group__toggle"
+                    aria-expanded={isOpen}
+                    onClick={() =>
+                      setOpenGroups((currentGroups) => ({
+                        ...currentGroups,
+                        [group.label]: !isOpen,
+                      }))
+                    }
                   >
-                    <Icon size={18} aria-hidden="true" />
-                    <span>{item.label}</span>
-                  </a>
-                </li>
+                    <span>{group.label}</span>
+                    <ChevronDown
+                      size={15}
+                      aria-hidden="true"
+                      className={isOpen ? "is-open" : undefined}
+                    />
+                  </button>
+                  {isOpen && (
+                    <ul>
+                      {group.routes.map((item) => {
+                        const Icon = item.icon;
+                        const active = item.key === route;
+                        return (
+                          <li key={item.key}>
+                            <a
+                              href={`#/${item.key}`}
+                              className={`sidebar__link ${active ? "is-active" : ""}`}
+                              aria-current={active ? "page" : undefined}
+                              onClick={(event) => {
+                                event.preventDefault();
+                                navigate(item.key);
+                              }}
+                            >
+                              <Icon size={18} aria-hidden="true" />
+                              <span>{item.label}</span>
+                            </a>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  )}
+                </section>
               );
             })}
-          </ul>
+          </div>
         </nav>
 
         <div className="sidebar__footer">
@@ -121,8 +162,7 @@ export function AppShell({
           {children}
           <footer className="site-footer">
             <p>
-              SGI-Dash · Dashboard académico basado en el expediente documental
-              del proceso ALE-CP-01.
+              SGI-Dash · Portal documental y de evidencia del proceso ALE-CP-01.
             </p>
             <p>
               {current.description} · Sin credenciales ni servicios externos.

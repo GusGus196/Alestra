@@ -4,6 +4,8 @@ import { Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxi
 import { DataNatureBadge } from "../components/common/Badge";
 import { DetailDrawer, DetailField, DetailSection } from "../components/common/DetailDrawer";
 import { PageIntro } from "../components/common/PageIntro";
+import { SourceLabel } from "../components/common/SourceLabel";
+import { StatusBadge } from "../components/common/StatusBadge";
 import { ChartPanel } from "../components/charts/ChartPanel";
 import { CHART_AXIS, CHART_BLUE, CHART_GRID } from "../components/charts/palette";
 import { FilterBar } from "../components/tables/FilterBar";
@@ -182,6 +184,7 @@ export function AssetsPage() {
           <>
             <div className="detail-badges">
               <DataNatureBadge nature={selected.dataNature} />
+              <StatusBadge status={selected.evidenceStatus} />
               <span className="classification-tag classification-tag--p">
                 {selected.classification}
               </span>
@@ -213,6 +216,10 @@ export function AssetsPage() {
                   <span className="chip" key={control}>{control}</span>
                 ))}
               </div>
+            </DetailSection>
+
+            <DetailSection title="Procedencia">
+              <SourceLabel source={selected} />
             </DetailSection>
 
             <div className="callout callout--muted">

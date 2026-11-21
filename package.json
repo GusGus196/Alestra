@@ -9,7 +9,8 @@
     "build": "tsc --noEmit && vite build",
     "typecheck": "tsc --noEmit",
     "preview": "vite preview",
-    "check:data": "node scripts/validate-data.mjs"
+    "check:data": "node scripts/validate-data.mjs",
+    "check:routes": "node scripts/smoke-routes.mjs"
   },
   "dependencies": {
     "lucide-react": "^0.468.0",

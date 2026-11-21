@@ -9,7 +9,11 @@
     "relatedRisks": [],
     "status": "not_specified",
     "dataNature": "documented",
-    "source": "ALE-Declaracion de Aplicabilidad SoA ISO27001 SGI-01.docx (tabla sección 2)"
+    "source": "ALE-Declaracion de Aplicabilidad SoA ISO27001 SGI-01.docx (tabla sección 2)",
+    "sourceDocument": "ALE-Declaracion de Aplicabilidad SoA ISO27001 SGI-01.docx (tabla sección 2)",
+    "sourceStatus": "equivalente_documentado",
+    "evidenceStatus": "documentado",
+    "academicLabel": "Control incluido en la SoA; implementación no verificada"
   },
   {
     "id": "5.30",
@@ -23,7 +27,11 @@
     ],
     "status": "not_specified",
     "dataNature": "documented",
-    "source": "ALE-Declaracion de Aplicabilidad SoA ISO27001 SGI-01.docx (tabla sección 2)"
+    "source": "ALE-Declaracion de Aplicabilidad SoA ISO27001 SGI-01.docx (tabla sección 2)",
+    "sourceDocument": "ALE-Declaracion de Aplicabilidad SoA ISO27001 SGI-01.docx (tabla sección 2)",
+    "sourceStatus": "equivalente_documentado",
+    "evidenceStatus": "documentado",
+    "academicLabel": "Control incluido en la SoA; implementación no verificada"
   },
   {
     "id": "6.3",
@@ -35,7 +43,11 @@
     "relatedRisks": [],
     "status": "not_specified",
     "dataNature": "documented",
-    "source": "ALE-Declaracion de Aplicabilidad SoA ISO27001 SGI-01.docx (tabla sección 2)"
+    "source": "ALE-Declaracion de Aplicabilidad SoA ISO27001 SGI-01.docx (tabla sección 2)",
+    "sourceDocument": "ALE-Declaracion de Aplicabilidad SoA ISO27001 SGI-01.docx (tabla sección 2)",
+    "sourceStatus": "equivalente_documentado",
+    "evidenceStatus": "documentado",
+    "academicLabel": "Control incluido en la SoA; implementación no verificada"
   },
   {
     "id": "7.12",
@@ -49,7 +61,11 @@
     ],
     "status": "not_specified",
     "dataNature": "documented",
-    "source": "ALE-Declaracion de Aplicabilidad SoA ISO27001 SGI-01.docx (tabla sección 2)"
+    "source": "ALE-Declaracion de Aplicabilidad SoA ISO27001 SGI-01.docx (tabla sección 2)",
+    "sourceDocument": "ALE-Declaracion de Aplicabilidad SoA ISO27001 SGI-01.docx (tabla sección 2)",
+    "sourceStatus": "equivalente_documentado",
+    "evidenceStatus": "documentado",
+    "academicLabel": "Control incluido en la SoA; implementación no verificada"
   },
   {
     "id": "8.8",
@@ -63,7 +79,11 @@
     ],
     "status": "not_specified",
     "dataNature": "documented",
-    "source": "ALE-Declaracion de Aplicabilidad SoA ISO27001 SGI-01.docx (tabla sección 2)"
+    "source": "ALE-Declaracion de Aplicabilidad SoA ISO27001 SGI-01.docx (tabla sección 2)",
+    "sourceDocument": "ALE-Declaracion de Aplicabilidad SoA ISO27001 SGI-01.docx (tabla sección 2)",
+    "sourceStatus": "equivalente_documentado",
+    "evidenceStatus": "documentado",
+    "academicLabel": "Control incluido en la SoA; implementación no verificada"
   },
   {
     "id": "8.12",
@@ -75,7 +95,11 @@
     "relatedRisks": [],
     "status": "not_specified",
     "dataNature": "documented",
-    "source": "ALE-Declaracion de Aplicabilidad SoA ISO27001 SGI-01.docx (tabla sección 2)"
+    "source": "ALE-Declaracion de Aplicabilidad SoA ISO27001 SGI-01.docx (tabla sección 2)",
+    "sourceDocument": "ALE-Declaracion de Aplicabilidad SoA ISO27001 SGI-01.docx (tabla sección 2)",
+    "sourceStatus": "equivalente_documentado",
+    "evidenceStatus": "documentado",
+    "academicLabel": "Control incluido en la SoA; implementación no verificada"
   },
   {
     "id": "8.14",
@@ -89,7 +113,11 @@
     ],
     "status": "not_specified",
     "dataNature": "documented",
-    "source": "ALE-Declaracion de Aplicabilidad SoA ISO27001 SGI-01.docx (tabla sección 2)"
+    "source": "ALE-Declaracion de Aplicabilidad SoA ISO27001 SGI-01.docx (tabla sección 2)",
+    "sourceDocument": "ALE-Declaracion de Aplicabilidad SoA ISO27001 SGI-01.docx (tabla sección 2)",
+    "sourceStatus": "equivalente_documentado",
+    "evidenceStatus": "documentado",
+    "academicLabel": "Control incluido en la SoA; implementación no verificada"
   },
   {
     "id": "8.20",
@@ -103,6 +131,10 @@
     ],
     "status": "not_specified",
     "dataNature": "documented",
-    "source": "ALE-Declaracion de Aplicabilidad SoA ISO27001 SGI-01.docx (tabla sección 2)"
+    "source": "ALE-Declaracion de Aplicabilidad SoA ISO27001 SGI-01.docx (tabla sección 2)",
+    "sourceDocument": "ALE-Declaracion de Aplicabilidad SoA ISO27001 SGI-01.docx (tabla sección 2)",
+    "sourceStatus": "equivalente_documentado",
+    "evidenceStatus": "documentado",
+    "academicLabel": "Control incluido en la SoA; implementación no verificada"
   }
 ]

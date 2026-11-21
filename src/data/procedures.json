@@ -1,0 +1,166 @@
+[
+  {
+    "id": "PROC-01",
+    "code": "ALE-PR-01",
+    "version": "01",
+    "date": "No especificada",
+    "title": "Atención de solicitudes e incidentes de Internet Empresarial",
+    "status": "Documentado · aprobación pendiente",
+    "objective": "Atender reportes, solicitudes y alertas de ALE-CP-01 de forma controlada, oportuna y trazable.",
+    "scope": "Desde la recepción del reporte hasta la verificación del servicio, comunicación y cierre documentado. No cubre toda la operación de Alestra.",
+    "references": [
+      "ALE-SGI-CP-01_Cedula_Proceso_Internet_Empresarial.docx",
+      "ALE-Matriz de Contexto Organizacional y Gestion de Riesgos SGI-01.docx",
+      "ALE-SGI-OBJ-01_Matriz_Objetivos_e_Indicadores.xlsx"
+    ],
+    "definitions": [
+      { "term": "Incidente", "meaning": "Evento que interrumpe, degrada o amenaza el servicio de Internet Empresarial." },
+      { "term": "Solicitud", "meaning": "Requerimiento de servicio o información que no necesariamente implica una falla." },
+      { "term": "Escalamiento", "meaning": "Transferencia controlada a otra área técnica o de seguridad cuando el caso lo requiere." }
+    ],
+    "roles": [
+      { "role": "Mesa de servicio / recepción", "responsibility": "Registrar, validar datos, clasificar y mantener informado al solicitante." },
+      { "role": "NOC / personal técnico autorizado", "responsibility": "Diagnosticar, ejecutar acciones autorizadas, documentar y escalar." },
+      { "role": "Responsable del proceso", "responsibility": "Supervisar el flujo, resolver bloqueos y revisar indicadores." },
+      { "role": "SOC / Seguridad, cuando aplique", "responsibility": "Apoyar ante indicios de amenazas o eventos de seguridad." }
+    ],
+    "inputs": ["Reporte de cliente", "Alerta de NMS", "Solicitud de servicio", "Datos de SLA"],
+    "steps": [
+      { "order": 1, "name": "Recepción", "detail": "Se recibe el reporte, solicitud o alerta por los canales definidos." },
+      { "order": 2, "name": "Registro", "detail": "Se crea el registro con datos mínimos sanitizados y se asigna identificador." },
+      { "order": 3, "name": "Validación y clasificación", "detail": "Se confirma el servicio afectado, severidad preliminar y riesgo relacionado.", "decision": "¿Es un evento de seguridad? Si sí, escalar al SOC." },
+      { "order": 4, "name": "Diagnóstico inicial", "detail": "El personal autorizado revisa alertas, bitácoras y pruebas básicas." },
+      { "order": 5, "name": "Resolución o escalamiento", "detail": "Se decide atención directa o transferencia controlada según complejidad.", "decision": "¿Requiere Nivel 2, Nivel 3 o SOC?" },
+      { "order": 6, "name": "Atención autorizada", "detail": "Se ejecutan acciones permitidas y se documenta cada intervención." },
+      { "order": 7, "name": "Verificación", "detail": "Se comprueba el restablecimiento del servicio con el solicitante o monitoreo." },
+      { "order": 8, "name": "Comunicación y cierre", "detail": "Se comunica el resultado y se cierra el registro con evidencia." },
+      { "order": 9, "name": "Conservación y análisis", "detail": "Se conserva la evidencia y se usa para indicadores y mejora." }
+    ],
+    "decisions": [
+      "Clasificación como incidente, solicitud o evento de seguridad.",
+      "Escalamiento a Nivel 2, Nivel 3 o SOC.",
+      "Cierre solo después de verificación y comunicación."
+    ],
+    "controls": ["8.20", "8.16 (referenciado en políticas; no en tabla SoA disponible)"],
+    "records": ["ALE-F-01 Registro de incidente/solicitud", "ALE-F-03 Registro de escalamiento técnico / SOC", "ALE-F-04 Verificación y cierre"],
+    "kpi": "OBJ-01, OBJ-02, OBJ-03, OBJ-04, PROP-05",
+    "relatedRisks": ["R1", "R6", "R7"],
+    "attachments": ["Flujo de atención de ALE-PR-01", "ALE-F-01 lleno como ejemplo simulado"],
+    "approval": "Pendiente de aprobación formal; no presentar como procedimiento vigente de Alestra.",
+    "changeControl": "Pendiente de definir responsable, periodicidad y registro de cambios.",
+    "sourceDocument": "ALE-PR-01_Procedimiento_Atencion_Internet_Empresarial.docx",
+    "sourceStatus": "equivalente_documentado",
+    "evidenceStatus": "documentado",
+    "academicLabel": "Propuesta académica; aprobación pendiente"
+  },
+  {
+    "id": "PROC-02",
+    "code": "ALE-PR-02",
+    "version": "Borrador 01",
+    "date": "No especificada",
+    "title": "Gestión de cambios de configuración de red",
+    "status": "Borrador académico — pendiente de validación",
+    "objective": "Proponer una secuencia controlada para solicitar, evaluar, autorizar, ejecutar y cerrar cambios de configuración de red.",
+    "scope": "Cambios de configuración que puedan afectar ALE-CP-01. Propuesta académica; no es un procedimiento vigente.",
+    "references": [
+      "README_Actualizacion_SGI_Dash_Alestra_OpenCode.md",
+      "ALE-Matriz de Contexto Organizacional y Gestion de Riesgos SGI-01.docx (R6)",
+      "ALE-Declaracion de Aplicabilidad SoA ISO27001 SGI-01.docx (8.8)"
+    ],
+    "definitions": [
+      { "term": "Cambio", "meaning": "Modificación planificada de una configuración de red autorizada." },
+      { "term": "Rollback", "meaning": "Acción planificada para restaurar la configuración previa si el cambio falla." },
+      { "term": "Ventana de cambio", "meaning": "Periodo acordado para ejecutar la modificación con menor impacto." }
+    ],
+    "roles": [
+      { "role": "Solicitante", "responsibility": "Describir el cambio, motivo y impacto esperado." },
+      { "role": "NOC / personal técnico autorizado", "responsibility": "Evaluar impacto, preparar respaldo, ejecutar y probar." },
+      { "role": "Responsable del proceso", "responsibility": "Autorizar la solicitud y coordinar la ventana." },
+      { "role": "SOC / Seguridad, cuando aplique", "responsibility": "Revisar implicaciones de seguridad del cambio." }
+    ],
+    "inputs": ["Solicitud de cambio", "Configuración actual autorizada", "Evaluación de riesgo", "Ventana propuesta"],
+    "steps": [
+      { "order": 1, "name": "Solicitud", "detail": "Registrar motivo, sistema afectado y resultado esperado en ALE-F-02." },
+      { "order": 2, "name": "Evaluación de impacto y riesgo", "detail": "Analizar disponibilidad, seguridad, dependencias y riesgos R4/R6." },
+      { "order": 3, "name": "Autorización", "detail": "El responsable del proceso autoriza o devuelve la solicitud.", "decision": "¿Cambio autorizado? Si no, documentar el motivo." },
+      { "order": 4, "name": "Planificación", "detail": "Definir ventana, recursos, pruebas y criterios de éxito." },
+      { "order": 5, "name": "Respaldo / configuración previa", "detail": "Guardar la configuración anterior y verificar que permita rollback." },
+      { "order": 6, "name": "Ejecución controlada", "detail": "Aplicar el cambio autorizado por personal autorizado." },
+      { "order": 7, "name": "Pruebas", "detail": "Verificar funcionalidad, conectividad y ausencia de alertas críticas." },
+      { "order": 8, "name": "Rollback si aplica", "detail": "Restaurar la configuración previa ante falla o impacto no aceptable.", "decision": "¿Se cumple el criterio de éxito? Si no, ejecutar rollback." },
+      { "order": 9, "name": "Comunicación", "detail": "Informar resultado a áreas afectadas y actualizar el registro." },
+      { "order": 10, "name": "Cierre", "detail": "Archivar evidencia, lecciones aprendidas y actualizar inventario si aplica." }
+    ],
+    "decisions": [
+      "Autorización previa antes de cualquier ejecución.",
+      "Criterios de éxito definidos antes de la ventana.",
+      "Rollback obligatorio si no se cumple el criterio de éxito."
+    ],
+    "controls": ["8.8", "8.20"],
+    "records": ["ALE-F-02 Solicitud y autorización de cambio", "ALE-F-04 Lista de verificación de pruebas y cierre"],
+    "kpi": "PROP-06, PROP-08",
+    "relatedRisks": ["R4", "R6"],
+    "attachments": ["ALE-F-02 en borrador", "Lista de verificación ALE-F-04"],
+    "approval": "Borrador académico — pendiente de validación y aprobación.",
+    "changeControl": "Pendiente de definir revisiones, responsable y registro de versiones.",
+    "sourceDocument": "README_Actualizacion_SGI_Dash_Alestra_OpenCode.md",
+    "sourceStatus": "no_aplica",
+    "evidenceStatus": "pendiente_validacion",
+    "academicLabel": "Borrador académico — pendiente de validación"
+  },
+  {
+    "id": "PROC-03",
+    "code": "ALE-PR-03",
+    "version": "Borrador 01",
+    "date": "No especificada",
+    "title": "Gestión y escalamiento de incidentes de seguridad",
+    "status": "Borrador académico — pendiente de validación",
+    "objective": "Proponer una respuesta coordinada ante incidentes de seguridad relacionados con ALE-CP-01, con preservación de evidencia y decisión humana.",
+    "scope": "Eventos de seguridad que afecten o amenacen el servicio de Internet Empresarial. Propuesta académica; sin conexión a SOC o SIEM reales.",
+    "references": [
+      "README_Actualizacion_SGI_Dash_Alestra_OpenCode.md",
+      "ALE-Manual SGI Alestra-01.docx (ejemplo F-01 simulado)",
+      "ALE-Matriz de Contexto Organizacional y Gestion de Riesgos SGI-01.docx (R1, R3)"
+    ],
+    "definitions": [
+      { "term": "Evento de seguridad", "meaning": "Indicio de acceso indebido, ataque, fuga o degradación con posible impacto en seguridad." },
+      { "term": "Preservación de evidencia", "meaning": "Conservación de registros sanitizados necesarios para análisis, sin exponer datos sensibles." },
+      { "term": "Contención", "meaning": "Acción autorizada para limitar el impacto del evento." }
+    ],
+    "roles": [
+      { "role": "Mesa de servicio / recepción", "responsibility": "Registrar el reporte inicial y avisar al responsable del proceso." },
+      { "role": "NOC / personal técnico autorizado", "responsibility": "Detectar, documentar y aplicar acciones técnicas autorizadas." },
+      { "role": "SOC / Seguridad, cuando aplique", "responsibility": "Clasificar, preservar evidencia, coordinar contención y recuperación." },
+      { "role": "Responsable del proceso", "responsibility": "Autorizar comunicaciones y decidir cierre con evidencia." }
+    ],
+    "inputs": ["Alerta o reporte", "Descripción sanitizada", "Registros disponibles", "Matriz de escalamiento"],
+    "steps": [
+      { "order": 1, "name": "Detección", "detail": "Se identifica un posible evento de seguridad por alerta o reporte." },
+      { "order": 2, "name": "Registro", "detail": "Se documenta en ALE-F-01 o ALE-F-03 con datos sanitizados." },
+      { "order": 3, "name": "Clasificación", "detail": "Se evalúa severidad preliminar y riesgo relacionado.", "decision": "¿Es incidente de seguridad? Si sí, activar escalamiento." },
+      { "order": 4, "name": "Preservación de evidencia", "detail": "Se conservan registros autorizados sin modificar la fuente original." },
+      { "order": 5, "name": "Escalamiento al SOC", "detail": "Se transfiere la información necesaria al rol de seguridad designado." },
+      { "order": 6, "name": "Contención coordinada", "detail": "Se aplican medidas autorizadas para limitar el impacto." },
+      { "order": 7, "name": "Recuperación", "detail": "Se restablece el servicio y se verifican controles afectados." },
+      { "order": 8, "name": "Comunicación", "detail": "Se informa a las partes interesadas según lo autorizado." },
+      { "order": 9, "name": "Cierre", "detail": "Se documenta resultado, evidencia y decisión de cierre." },
+      { "order": 10, "name": "Lecciones aprendidas", "detail": "Se identifican mejoras y posibles actualizaciones de riesgos o controles." }
+    ],
+    "decisions": [
+      "La clasificación y el escalamiento requieren revisión humana.",
+      "La contención se ejecuta solo por personal autorizado.",
+      "El cierre requiere evidencia y aprobación del responsable del proceso."
+    ],
+    "controls": ["8.20", "8.15 y 8.16 referenciados en políticas; no en tabla SoA disponible"],
+    "records": ["ALE-F-01 Registro de incidente/solicitud", "ALE-F-03 Registro de escalamiento técnico / SOC", "ALE-F-05 Registro de hallazgo y acción correctiva"],
+    "kpi": "OBJ-02, PROP-05, PROP-07",
+    "relatedRisks": ["R1", "R3", "R7"],
+    "attachments": ["ALE-F-03 en borrador", "Ejemplo F-01 simulado para demostración"],
+    "approval": "Borrador académico — pendiente de validación y aprobación.",
+    "changeControl": "Pendiente de definir revisiones, responsable y registro de versiones.",
+    "sourceDocument": "README_Actualizacion_SGI_Dash_Alestra_OpenCode.md",
+    "sourceStatus": "no_aplica",
+    "evidenceStatus": "pendiente_validacion",
+    "academicLabel": "Borrador académico — pendiente de validación"
+  }
+]

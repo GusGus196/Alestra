@@ -1,7 +1,9 @@
-import { ArrowRight, CircleAlert, ClipboardCheck, Siren, Users } from "lucide-react";
+import { ArrowRight, CircleAlert, ClipboardCheck, Users } from "lucide-react";
 import type { RouteKey } from "../app/routes";
+import { AcademicSimulationBanner } from "../components/common/AcademicSimulationBanner";
 import { DataNatureBadge } from "../components/common/Badge";
 import { PageIntro } from "../components/common/PageIntro";
+import { SourceLabel } from "../components/common/SourceLabel";
 import { incidents, meta, risks } from "../lib/data";
 import { formatDateTime, formatDuration } from "../lib/formatters";
 
@@ -22,18 +24,10 @@ export function IncidentsPage({
         actions={<DataNatureBadge nature="simulated" />}
       />
 
-      <div className="simulation-banner" role="alert">
-        <Siren size={24} aria-hidden="true" />
-        <div>
-          <strong>{incident.simulationNotice}</strong>
-          <p>
-            Los valores 45 minutos y 99.95% de Uptime aparecen solo dentro de
-            este escenario académico. No son indicadores operativos reales de
-            Alestra.
-          </p>
-        </div>
-        <span className="simulation-banner__tag">DEMOSTRATIVO</span>
-      </div>
+      <AcademicSimulationBanner
+        notice={incident.simulationNotice}
+        description="Los valores 45 minutos y 99.95% de Uptime aparecen solo dentro de este escenario académico. No son indicadores operativos reales de Alestra."
+      />
 
       <section className="panel incident-card" aria-labelledby="incidente-titulo">
         <div className="panel__header">
@@ -105,7 +99,10 @@ export function IncidentsPage({
           <button type="button" className="button button--ghost" onClick={() => onNavigate("riesgos")}>
             Ver riesgo {incident.riskId} <ArrowRight size={15} />
           </button>
-          <span className="drawer__source">Fuente: {incident.source}</span>
+          <button type="button" className="button button--ghost" onClick={() => onNavigate("formatos")}>
+            Abrir formato ALE-F-01 <ArrowRight size={15} />
+          </button>
+          <SourceLabel source={incident} compact />
         </div>
       </section>
 
